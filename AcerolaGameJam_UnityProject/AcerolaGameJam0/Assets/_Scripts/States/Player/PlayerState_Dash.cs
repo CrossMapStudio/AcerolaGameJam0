@@ -25,16 +25,26 @@ public class PlayerState_Dash : BaseState
     private UnityEvent<Vector2> ExecuteDashOnQueue = null;
     private Vector2 _QueueDirection;
 
+    //Queue Attack
+    private UnityEvent ExecuteAttackOnQueue = null;
+
+    public override bool checkValid()
+    {
+        if (PlayerController.Get_Controller.Get_DashValues.Current_DashAmount < Dash_AmountTarget) return true; else return false;
+    }
+
     public override void onEnter()
     {
         ExecuteDash(Vector2.zero);
         Player_InputDriver.Get_Dash.performed += QueueDash;
+        Player_InputDriver.Get_AttackLight.performed += QueueAttack;
     }
 
     public override void onExit()
     {
         PlayerController.Get_Controller.DashParticles.Stop();
         Player_InputDriver.Get_Dash.performed -= QueueDash;
+        Player_InputDriver.Get_AttackLight.performed -= QueueAttack;
     }
 
     public override void onFixedUpdate()
@@ -63,6 +73,12 @@ public class PlayerState_Dash : BaseState
                 ExecuteDashOnQueue.RemoveListener(ExecuteDash);
                 ExecuteDashOnQueue = null;
             }
+            else if (ExecuteAttackOnQueue != null)
+            {
+                ExecuteAttackOnQueue.Invoke();
+                ExecuteAttackOnQueue.RemoveListener(Attack);
+                ExecuteAttackOnQueue = null;
+            }
             else
                 PlayerController.Get_Controller.Get_StateMachine.changeState(PlayerController.Get_Controller.Get_States[1]);
         }
@@ -81,16 +97,11 @@ public class PlayerState_Dash : BaseState
         }
     }
 
-    public override bool checkValid()
-    {
-        if (PlayerController.Get_Controller.Get_DashValues.Current_DashAmount < Dash_AmountTarget) return true; else return false;
-    }
-
     public void ExecuteDash(Vector2 QueueDirection)
     {
         Vector2 Direction = Vector2.zero;
         if (QueueDirection == Vector2.zero)
-            Direction = Player_InputDriver.Get_Movement.ReadValue<Vector2>();
+            Direction = Player_InputDriver.Get_StoredDirection;
         else
             Direction = QueueDirection;
 
@@ -116,8 +127,19 @@ public class PlayerState_Dash : BaseState
         if (PlayerController.Get_Controller.Get_DashValues.Current_DashAmount < Dash_AmountTarget)
         {
             ExecuteDashOnQueue = new UnityEvent<Vector2>();
-            _QueueDirection = Player_InputDriver.Get_Movement.ReadValue<Vector2>();
+            _QueueDirection = Player_InputDriver.Get_StoredDirection;
             ExecuteDashOnQueue.AddListener(ExecuteDash);
         }
+    }
+
+    public void QueueAttack(InputAction.CallbackContext context)
+    {
+        ExecuteAttackOnQueue = new UnityEvent();
+        ExecuteAttackOnQueue.AddListener(Attack);
+    }
+
+    public void Attack()
+    {
+        PlayerController.Get_Controller.Get_StateMachine.changeState(PlayerController.Get_Controller.Get_States[3]);
     }
 }

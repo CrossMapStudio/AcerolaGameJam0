@@ -30,8 +30,17 @@ public class PlayerController : SingletonPersistent<PlayerController>
     private Dash_Values DashValues;
     public Dash_Values Get_DashValues => DashValues;
 
+    private Attack_Values AttackValues;
+    public Attack_Values GetAttack_Values => AttackValues;
+
     //Particles for Dash
     public ParticleSystem DashParticles;
+
+    public Collider2D HitRadius;
+
+    //For Interaction ---
+    public float Interaction_Distance;
+    public LayerMask Interaction_Layer;
 
     protected override void Awake()
     {
@@ -41,6 +50,7 @@ public class PlayerController : SingletonPersistent<PlayerController>
         Player_RB = GetComponent<Rigidbody2D>();
 
         DashValues = new Dash_Values();
+        AttackValues = new Attack_Values();
     }
 
     public void Start()
@@ -81,4 +91,44 @@ public class Dash_Values
     public float Current_DashRecovery = 0f;
     public float Current_DashTime = 0f;
     public int Current_DashAmount = 0;
+}
+
+public class Attack_Values
+{
+    public int comboCount = 0;
+}
+
+
+//For Interactions ---
+public static class PlayerInteractionBase
+{
+    public static InteractionBase CallInteractionCheck()
+    {
+        Collider2D[] Interactable_Objects = Physics2D.OverlapCircleAll(PlayerController.Get_Controller.Get_PlayerRB.position, PlayerController.Get_Controller.Interaction_Distance, PlayerController.Get_Controller.Interaction_Layer);
+
+        float DistanceToNearestObject = PlayerController.Get_Controller.Interaction_Distance;
+        Collider2D ActiveObject = null;
+
+        if (Interactable_Objects.Length != 0)
+        {
+            foreach (Collider2D element in Interactable_Objects)
+            {
+                if (Vector2.Distance(element.transform.position, PlayerController.Get_Controller.Get_PlayerRB.position) <= DistanceToNearestObject)
+                {
+                    DistanceToNearestObject = Vector2.Distance(element.transform.position, PlayerController.Get_Controller.Get_PlayerRB.position);
+                    if (ActiveObject != element)
+                        ActiveObject = element;
+                }
+            }
+
+            if (ActiveObject != null)
+                return ActiveObject.GetComponent<InteractionBase>();
+            else
+                return null;
+        }
+        else
+        {
+            return null;
+        }
+    }
 }

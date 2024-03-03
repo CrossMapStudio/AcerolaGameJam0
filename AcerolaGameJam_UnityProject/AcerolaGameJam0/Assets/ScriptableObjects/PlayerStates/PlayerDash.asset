@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerDash
   m_EditorClassIdentifier: 
   ID: PlayerDash
-  Dash_Speed: 12
+  Dash_Speed: 15
   Dash_Distance: 2
-  Dash_AmountTarget: 5
+  Dash_AmountTarget: 2
   Dash_RecoveryTarget: 2
   Dash_TimeTarget: 0.3
   Raycast_HitLayers:

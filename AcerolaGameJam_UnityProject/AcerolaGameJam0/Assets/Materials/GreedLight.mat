@@ -66,7 +66,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Emission_Color: {r: 0, g: 1.4980392, b: 1.4093624, a: 0}
+    - _Emission_Color: {r: 0.1456554, g: 1.7814789, b: 1.6124436, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

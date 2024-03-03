@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Player Free Movement
   Player_Speed: 2
+  Interact: {fileID: 11400000, guid: b68602e9a50b68841b4558726e8fcbf4, type: 2}

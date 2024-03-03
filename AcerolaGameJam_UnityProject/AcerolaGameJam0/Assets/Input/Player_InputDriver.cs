@@ -24,6 +24,9 @@ public class Player_InputDriver : SingletonPersistent<Player_InputDriver>
 
     private static InputAction Attack_Light;
     public static InputAction Get_AttackLight => Attack_Light;
+
+    private static Vector2 StoredDirection = new Vector2(1, 0);
+    public static Vector2 Get_StoredDirection => StoredDirection;
     #endregion
 
     protected override void Awake()
@@ -34,6 +37,8 @@ public class Player_InputDriver : SingletonPersistent<Player_InputDriver>
         Input_Controller = new Player_Input();
         Movement = Input_Controller.Player.Movement;
         Dash = Input_Controller.Player.Dash;
+        Attack_Light = Input_Controller.Player.Attack;
+        Interact = Input_Controller.Player.Interact;
     }
 
     public void OnEnable()
@@ -41,5 +46,13 @@ public class Player_InputDriver : SingletonPersistent<Player_InputDriver>
         //Enable the Input ---
         Movement.Enable();
         Dash.Enable();
+        Attack_Light.Enable();
+        Interact.Enable();
+    }
+
+    public void Update()
+    {
+        Vector2 MovementVector = Movement.ReadValue<Vector2>();
+        StoredDirection = MovementVector != Vector2.zero ? MovementVector : StoredDirection;
     }
 }
