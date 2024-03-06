@@ -10,6 +10,8 @@ public class MessageBox : Interactable
     public TMP_Text Message_Text;
 
     private bool PlayExit = false;
+    
+    public UIInteractData Interact_Instructions;
 
     protected virtual void Awake()
     {
@@ -20,12 +22,15 @@ public class MessageBox : Interactable
     protected override void On_Enter()
     {
         //Do Nothing
+        Interact_Call.RaiseEvent(Interact_Instructions);
     }
 
     protected override void On_Exit()
     {
         if (PlayExit)
             Box_Animator.Play("MessageBoxHideMessage");
+
+        Interact_Call.RaiseEvent(Interact_Instructions);
     }
 
     protected override void On_Interact()

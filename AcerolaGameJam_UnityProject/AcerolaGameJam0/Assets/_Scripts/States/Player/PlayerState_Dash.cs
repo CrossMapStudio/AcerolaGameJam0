@@ -28,6 +28,10 @@ public class PlayerState_Dash : BaseState
     //Queue Attack
     private UnityEvent ExecuteAttackOnQueue = null;
 
+    //Add UI Channels
+    [SerializeField] private UICallChannel OnDashUse;
+    [SerializeField] private UICallChannelFloat UpdateDashValues;
+
     public override bool checkValid()
     {
         if (PlayerController.Get_Controller.Get_DashValues.Current_DashAmount < Dash_AmountTarget) return true; else return false;
@@ -89,6 +93,8 @@ public class PlayerState_Dash : BaseState
         if (PlayerController.Get_Controller.Get_DashValues.Current_DashAmount > 0)
         {
             PlayerController.Get_Controller.Get_DashValues.Current_DashRecovery += Time.deltaTime;
+            UpdateDashValues.RaiseEvent(Dash_RecoveryTarget);
+
             if (PlayerController.Get_Controller.Get_DashValues.Current_DashRecovery >= Dash_RecoveryTarget)
             {
                 PlayerController.Get_Controller.Get_DashValues.Current_DashRecovery = 0f;
@@ -119,6 +125,7 @@ public class PlayerState_Dash : BaseState
             PlayerController.Get_Controller.Get_PlayerAnimator.Play("Player_Dash");
 
             PlayerController.Get_Controller.Get_DashValues.Current_DashTime = 0f;
+            OnDashUse.RaiseEvent();
         }
     }
 

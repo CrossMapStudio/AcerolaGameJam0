@@ -42,6 +42,10 @@ public class PlayerController : SingletonPersistent<PlayerController>
     public float Interaction_Distance;
     public LayerMask Interaction_Layer;
 
+    //Player Health --- Used for Calling Death State
+    private float Health = 100f;
+    public float Get_Health => Health;
+
     protected override void Awake()
     {
         Controller = this;

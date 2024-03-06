@@ -59,10 +59,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.15
 --- !u!114 &-411169028644523929
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -302,10 +302,10 @@ MonoBehaviour:
   active: 1
   lift:
     m_OverrideState: 1
-    m_Value: {x: 0.97661567, y: 1, z: 0.97363645, w: 0}
+    m_Value: {x: 0.9984051, y: 1, z: 0.9968102, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.9867657, y: 1, z: 0.9912376, w: 0}
+    m_Value: {x: 0.9872387, y: 1, z: 0.9805972, w: 0}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 0.9770932, y: 0.9752807, z: 1, w: 0}
+    m_Value: {x: 1, y: 0.9925525, z: 0.9615897, w: 0}

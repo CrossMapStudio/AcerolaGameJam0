@@ -59,7 +59,7 @@ public class ColorChange : MonoBehaviour
 
         if (dot >= .2f || Vector2.Distance(transform.position, PlayerController.Get_Controller.Get_PlayerRB.position) <= .3f)
         {
-            TargetPosition = ((Vector2)transform.position - PlayerController.Get_Controller.Get_PlayerRB.position).normalized * 15f;
+            TargetPosition = ((Vector2)transform.position - PlayerController.Get_Controller.Get_PlayerRB.position).normalized * 12f;
             Health -= damage;
             Debug.Log("Damage: " + damage);
         }

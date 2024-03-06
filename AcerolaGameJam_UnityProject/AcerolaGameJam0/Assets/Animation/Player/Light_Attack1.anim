@@ -32,9 +32,9 @@ AnimationClip:
       value: {fileID: 1104149676, guid: cc44c55ad887a814c94e3b577d6b19bd, type: 3}
     - time: 0.21666667
       value: {fileID: 1497066845, guid: cc44c55ad887a814c94e3b577d6b19bd, type: 3}
-    - time: 0.25
+    - time: 0.26666668
       value: {fileID: 1318528093, guid: cc44c55ad887a814c94e3b577d6b19bd, type: 3}
-    - time: 0.28333333
+    - time: 0.31666666
       value: {fileID: -1294963264, guid: cc44c55ad887a814c94e3b577d6b19bd, type: 3}
     - time: 0.33333334
       value: {fileID: -1294963264, guid: cc44c55ad887a814c94e3b577d6b19bd, type: 3}
@@ -95,21 +95,21 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: On_LightAttackInitialize
+    functionName: On_AnimationStart
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.033333335
-    functionName: On_LightAttackEvent
+    functionName: On_AnimationEvent
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.33333334
-    functionName: On_LightAttackFinished
+    functionName: On_AnimationFinished
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

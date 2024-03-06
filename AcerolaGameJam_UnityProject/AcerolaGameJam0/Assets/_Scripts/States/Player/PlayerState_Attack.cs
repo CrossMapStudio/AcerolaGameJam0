@@ -21,7 +21,12 @@ public class PlayerState_Attack : BaseState
 
     //Weapon Type
     [SerializeField] private Melee Assigned_WeaponType;
-    [SerializeField] private CombatInvoke On_LightInitialized, On_LightEvent, On_LightFinished;
+    [SerializeField] private Animation_Invoke On_LightInitialized, On_LightEvent, On_LightFinished;
+
+    #region Camera Channel
+    [SerializeField] private float CameraShake_Amplitude, CameraShake_Frequency, CameraShake_Smooth;
+    [SerializeField] private CameraShake_Channel CameraShakeChannel;
+    #endregion
 
 
     public override bool checkValid()
@@ -109,6 +114,8 @@ public class PlayerState_Attack : BaseState
 
             PlayerController.Get_Controller.Get_Renderer.flipX = true ? Player_InputDriver.Get_StoredDirection.x < 0 : false;
             PlayerController.Get_Controller.Get_PlayerAnimator.Play("Light_Attack" + PlayerController.Get_Controller.GetAttack_Values.comboCount.ToString(), 0, 0);
+
+            CameraShakeChannel.RaiseEvent(CameraShake_Amplitude, CameraShake_Frequency, CameraShake_Smooth);
         }
         else
         {

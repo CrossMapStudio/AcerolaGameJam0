@@ -14,9 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Player Attack
   comboCountLimit: 3
-  StepDistance: 8
+  StepDistance: 7
   MovementInfluence: 0.45
   Assigned_WeaponType: {fileID: 11400000, guid: 4ed2f009b8809374ea0fd2ab45a10a12, type: 2}
-  On_LightInitialized: {fileID: 11400000, guid: 0ff192e745b43aa4f84d46484ad58bb2, type: 2}
-  On_LightEvent: {fileID: 11400000, guid: 33fa27c37bc31df48b4eb6a7394780aa, type: 2}
-  On_LightFinished: {fileID: 11400000, guid: 6912368dbbaadd14b9fc4f1658a4be74, type: 2}
+  On_LightInitialized: {fileID: 11400000, guid: 7e1d6af141737a6418a60ab0b437bb36, type: 2}
+  On_LightEvent: {fileID: 11400000, guid: 72d7ade66c50b2144aba9b0900e4fe4f, type: 2}
+  On_LightFinished: {fileID: 11400000, guid: eadf289f057ed944e8c97041fe30c0e6, type: 2}
+  CameraShake_Amplitude: 0.4
+  CameraShake_Frequency: 0.4
+  CameraShake_Smooth: 5
+  CameraShakeChannel: {fileID: 11400000, guid: 113aaa84be052e74386185ebd3f43269, type: 2}

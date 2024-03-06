@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: PlayerDash
   m_EditorClassIdentifier: 
   ID: PlayerDash
-  Dash_Speed: 15
+  Dash_Speed: 8
   Dash_Distance: 2
   Dash_AmountTarget: 2
   Dash_RecoveryTarget: 2
-  Dash_TimeTarget: 0.3
+  Dash_TimeTarget: 0.35
   Raycast_HitLayers:
     serializedVersion: 2
     m_Bits: 119
+  OnDashUse: {fileID: 11400000, guid: 0ee4a87e0165f30479087cb79b7ff44a, type: 2}
+  UpdateDashValues: {fileID: 11400000, guid: 04dfaef27b1da9e45b9c4569e3b8a19e, type: 2}

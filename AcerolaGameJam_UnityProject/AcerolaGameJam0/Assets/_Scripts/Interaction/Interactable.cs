@@ -8,6 +8,8 @@ public abstract class Interactable : MonoBehaviour
     private InteractionBase Interaction_Base;
     public InteractionBase Get_InteractionBase => Interaction_Base;
 
+    public UICallChannelInteract Interact_Call;
+
     protected void Awake()
     {
         Interaction_Base = GetComponent<InteractionBase>();

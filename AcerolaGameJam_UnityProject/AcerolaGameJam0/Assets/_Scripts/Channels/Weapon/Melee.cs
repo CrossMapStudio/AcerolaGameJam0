@@ -29,7 +29,7 @@ public class Melee : ScriptableObject
 
     public void OnLightAttack_AnimationEvent()
     {
-        CombatChannel.RaiseEvent(Player_InputDriver.Get_Movement.ReadValue<Vector2>(), damageValue);
+        CombatChannel.RaiseEvent(Player_InputDriver.Get_StoredDirection, damageValue);
     }
 
     public void OnLightAttack_Finished()

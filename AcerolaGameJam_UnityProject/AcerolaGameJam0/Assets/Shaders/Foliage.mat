@@ -54,16 +54,16 @@ Material:
     m_Ints: []
     m_Floats:
     - _Blend: 0.05
-    - _CellDensity: 11.58
+    - _CellDensity: 10.5
     - _EnableExternalAlpha: 0
-    - _PixelAmount: 64
+    - _PixelAmount: 256
     - _PixelAmountColorChange: 3
-    - _Speed: 3
+    - _Speed: 0.2
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Tint: {r: 1, g: 0.8836478, b: 0.8836478, a: 0}
+    - _Tint: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7845398861911482874
 MonoBehaviour:

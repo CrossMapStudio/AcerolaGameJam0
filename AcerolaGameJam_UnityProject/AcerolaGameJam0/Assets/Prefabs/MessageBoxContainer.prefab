@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 5563983688538893883}
   - component: {fileID: 1538204897320259868}
   - component: {fileID: 2991180039088944405}
+  - component: {fileID: 7943910353692253691}
   m_Layer: 7
   m_Name: MessageBoxContainer
   m_TagString: Interaction
@@ -162,10 +163,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471cf0f17d8cc1b4dbb5d4e828fecabc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Interact_Call: {fileID: 11400000, guid: dc55ce39039bd7a4b96776e6956096ed, type: 2}
   Message_Data: {fileID: 11400000, guid: 61a66ed1243592b4388c6bfeaf843785, type: 2}
   Box_Animator: {fileID: 1560371003951435010}
   Message_Text: {fileID: 8109678594563493864}
+  Interact_Instructions: {fileID: 11400000, guid: 70b8e2335e0992a43b5b4fb6a4b3f14a, type: 2}
 --- !u!61 &2991180039088944405
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5967947198760890752}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.07736686}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.325, y: 0.16090709}
+  m_EdgeRadius: 0
+--- !u!61 &7943910353692253691
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -405,6 +453,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4951178581019687224, guid: ca13c12b3dc303947bcbfed078b19754, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 128356c29bd747e45b13c8c3200e0b98, type: 2}
+    - target: {fileID: 4951178581019687224, guid: ca13c12b3dc303947bcbfed078b19754, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1660110079793680618, guid: 128356c29bd747e45b13c8c3200e0b98, type: 2}
     - target: {fileID: 6571964870039473382, guid: ca13c12b3dc303947bcbfed078b19754, type: 3}
       propertyPath: m_Name
       value: WorldSpace_UIText

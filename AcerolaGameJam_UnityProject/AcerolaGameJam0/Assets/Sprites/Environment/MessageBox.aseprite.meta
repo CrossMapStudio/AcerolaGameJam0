@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: MessageBox
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 64
-      height: 64
+      width: 22
+      height: 24
     spriteID: ccb219affe3c4944e8fed15bd04981dd
     spriteBone: []
     spriteOutline: []
@@ -141,16 +141,16 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: MessageBox_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 76
-      width: 64
-      height: 64
-    spriteID: 14ecb5aa596fe414fadb6c3e55534a4c
+      y: 36
+      width: 22
+      height: 24
+    spriteID: 5756da642e3da59488ff6ccee2bd6c88
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -158,19 +158,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 76}
+    uvTransform: {x: 4, y: 36}
   - name: MessageBox_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 148
-      width: 64
-      height: 64
-    spriteID: e6d3f7743f9e1e64eb51c62038cd80c0
+      y: 68
+      width: 22
+      height: 24
+    spriteID: c51ddc68971f2f74ca3e6dc3f585edcd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -178,19 +178,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 148}
+    uvTransform: {x: 4, y: 68}
   - name: MessageBox_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 4
-      width: 64
-      height: 64
-    spriteID: 7a4bfad27794b254fb3e0032c43f7d51
+      x: 4
+      y: 100
+      width: 22
+      height: 24
+    spriteID: 9433d7accdfdf1f40b0b8ade046c6861
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -198,19 +198,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 4}
+    uvTransform: {x: 4, y: 100}
   - name: MessageBox_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 76
-      width: 64
-      height: 64
-    spriteID: 00b5249fe150ec644982e38cbf8bd1e9
+      x: 34
+      y: 4
+      width: 22
+      height: 24
+    spriteID: f179b4c55e350a343b40cdd012710a28
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -218,19 +218,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 76}
+    uvTransform: {x: 34, y: 4}
   - name: MessageBox_Frame_5
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 148
-      width: 64
-      height: 64
-    spriteID: f23dfa12111e21d48a88277b461e3d20
+      x: 34
+      y: 36
+      width: 22
+      height: 24
+    spriteID: 327d9b85601c7f947ae1da24c4902a0d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -238,19 +238,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 148}
+    uvTransform: {x: 34, y: 36}
   - name: MessageBox_Frame_6
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 148
-      y: 4
-      width: 64
-      height: 64
-    spriteID: 0d8dbf02e1befa446b082fe883f19644
+      x: 34
+      y: 68
+      width: 22
+      height: 24
+    spriteID: 6653b48f576311d4bacb3bde75e0d2dc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -258,19 +258,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 148, y: 4}
+    uvTransform: {x: 34, y: 68}
   - name: MessageBox_Frame_7
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 148
-      y: 76
-      width: 64
-      height: 64
-    spriteID: 78bd2e4e1c4741d47aebbfc108dd4d04
+      x: 34
+      y: 100
+      width: 22
+      height: 24
+    spriteID: 0ee3f51a8e5fc4844acb7322a9ee904f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -278,7 +278,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 148, y: 76}
+    uvTransform: {x: 34, y: 100}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -291,67 +291,67 @@ ScriptedImporter:
     - name: MessageBox_Frame_0
       frameIndex: 0
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 21
+        y: 16
+        width: 22
+        height: 24
       spriteId: ccb219affe3c4944e8fed15bd04981dd
     - name: MessageBox_Frame_1
       frameIndex: 1
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: 14ecb5aa596fe414fadb6c3e55534a4c
+        x: 21
+        y: 16
+        width: 22
+        height: 24
+      spriteId: 5756da642e3da59488ff6ccee2bd6c88
     - name: MessageBox_Frame_2
       frameIndex: 2
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: e6d3f7743f9e1e64eb51c62038cd80c0
+        x: 21
+        y: 16
+        width: 22
+        height: 24
+      spriteId: c51ddc68971f2f74ca3e6dc3f585edcd
     - name: MessageBox_Frame_3
       frameIndex: 3
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: 7a4bfad27794b254fb3e0032c43f7d51
+        x: 21
+        y: 16
+        width: 22
+        height: 24
+      spriteId: 9433d7accdfdf1f40b0b8ade046c6861
     - name: MessageBox_Frame_4
       frameIndex: 4
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: 00b5249fe150ec644982e38cbf8bd1e9
+        x: 21
+        y: 16
+        width: 22
+        height: 24
+      spriteId: f179b4c55e350a343b40cdd012710a28
     - name: MessageBox_Frame_5
       frameIndex: 5
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: f23dfa12111e21d48a88277b461e3d20
+        x: 21
+        y: 16
+        width: 22
+        height: 24
+      spriteId: 327d9b85601c7f947ae1da24c4902a0d
     - name: MessageBox_Frame_6
       frameIndex: 6
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: 0d8dbf02e1befa446b082fe883f19644
+        x: 21
+        y: 16
+        width: 22
+        height: 24
+      spriteId: 6653b48f576311d4bacb3bde75e0d2dc
     - name: MessageBox_Frame_7
       frameIndex: 7
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: 78bd2e4e1c4741d47aebbfc108dd4d04
+        x: 21
+        y: 16
+        width: 22
+        height: 24
+      spriteId: 0ee3f51a8e5fc4844acb7322a9ee904f
     linkedCells: []
     parentIndex: -1
   platformSettings: []
