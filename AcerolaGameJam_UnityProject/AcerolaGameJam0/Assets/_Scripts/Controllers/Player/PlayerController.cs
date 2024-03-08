@@ -45,6 +45,9 @@ public class PlayerController : SingletonPersistent<PlayerController>
     //Player Health --- Used for Calling Death State
     private float Health = 100f;
     public float Get_Health => Health;
+    //Player Shard Collection ---
+    private Shards_Interaction Current_Shard;
+    public Shards_Interaction GetSet_CurrentShard { get => Current_Shard; set => Current_Shard = value; }
 
     protected override void Awake()
     {
@@ -55,6 +58,8 @@ public class PlayerController : SingletonPersistent<PlayerController>
 
         DashValues = new Dash_Values();
         AttackValues = new Attack_Values();
+
+        base.Awake();
     }
 
     public void Start()

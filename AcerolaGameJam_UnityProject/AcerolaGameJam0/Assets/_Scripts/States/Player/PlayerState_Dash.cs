@@ -29,7 +29,7 @@ public class PlayerState_Dash : BaseState
     private UnityEvent ExecuteAttackOnQueue = null;
 
     //Add UI Channels
-    [SerializeField] private UICallChannel OnDashUse;
+    [SerializeField] private GenericCallChannel OnDashUse;
     [SerializeField] private UICallChannelFloat UpdateDashValues;
 
     public override bool checkValid()

@@ -37,5 +37,11 @@ public class MessageBox : Interactable
     {
         Box_Animator.Play("MessageBoxShowMessage");
         PlayExit = true;
+
+        if (Get_InteractionBase.Get_TutorialChannel != null)
+        {
+            Get_InteractionBase.Get_TutorialChannel.RaiseEvent_ShowTutorial(Get_InteractionBase.Get_TutorialData);
+            Get_InteractionBase.Get_TutorialChannel = null;
+        }
     }
 }

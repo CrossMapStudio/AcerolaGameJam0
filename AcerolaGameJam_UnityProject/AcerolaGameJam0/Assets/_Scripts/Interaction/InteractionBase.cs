@@ -11,8 +11,14 @@ public class InteractionBase : MonoBehaviour
     public UnityAction GetSet_Subscriber { get => Subscriber; set => Subscriber = value; }
     public UnityAction GetSet_OnEnter { get => OnEnter; set => OnEnter = value; }
     public UnityAction GetSet_OnExit { get => OnExit; set => OnExit = value; }
+    public TutorialData Get_TutorialData { get => Tutorial_Data; }
+    public TutorialUI_Channel Get_TutorialChannel { get => Tutorial_Channel; set => Tutorial_Channel = value; }
 
     [SerializeField] private Interact_Channel Channel;
+
+    //Tutorials
+    [SerializeField] private TutorialData Tutorial_Data;
+    [SerializeField] private TutorialUI_Channel Tutorial_Channel;
 
     public void EnableInteraction()
     {

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
+using UnityEngine.Video;
 
-public class UIManager : MonoBehaviour
+public class UIManager : SingletonPersistent<UIManager>
 {
     #region Health UI
     public Image HealthBar;
@@ -27,14 +29,21 @@ public class UIManager : MonoBehaviour
     #endregion
 
 
-    [SerializeField] private UICallChannel Dash_Channel;
+    [SerializeField] private GenericCallChannel Dash_Channel;
     [SerializeField] private UICallChannelFloat Dash_Update;
     [SerializeField] private UICallChannelInteract Interact_Channel;
 
-    [SerializeField] private UICallChannel Banner_Hide;
+    [SerializeField] private GenericCallChannel Banner_Hide;
     [SerializeField] private UICallChannelString Banner_Show;
 
-    private void Awake()
+    //Tutorial
+    [SerializeField] private TutorialUI_Channel Tutorial_Channel;
+    [SerializeField] private GameObject Tutorial_UIContainer;
+    [SerializeField] private VideoPlayer Tutorial_Player;
+    [SerializeField] private Image KeyboardInput, GamepadInput;
+    [SerializeField] private TMP_Text Mechanic_Title;
+
+    protected override void Awake()
     {
         Dash_Channel.OnEventRaised.AddListener(UseDashNode);
         Dash_Update.OnEventRaised.AddListener(UpdateDashNode);
@@ -42,7 +51,10 @@ public class UIManager : MonoBehaviour
         Banner_Show.OnEventRaised.AddListener(DisplayBanner);
         Banner_Hide.OnEventRaised.AddListener(HideBanner);
 
+        Tutorial_Channel.OnEventRaised.AddListener(ShowTutorial);
         Banner_Anim.gameObject.SetActive(true);
+
+        base.Awake();
     }
 
     public void UseDashNode()
@@ -107,5 +119,25 @@ public class UIManager : MonoBehaviour
     public void HideBanner()
     {
         Banner_Anim.Play(HideBannerAnimationName, 0, 0);
+    }
+
+    public void ShowTutorial(TutorialData data)
+    {
+        Player_InputDriver.Get_Interact.performed += HideTutorial;
+        PlayerController.Get_Controller.Get_StateMachine.changeState(PlayerController.Get_Controller.Get_States[0]);
+
+        //Show the tutorial ---
+        Tutorial_UIContainer.SetActive(true);
+        Tutorial_Player.clip = data.Tutorial_Clip;
+        KeyboardInput.sprite = data.Key_Input;
+        GamepadInput.sprite = data.GamePad_Input;
+        Mechanic_Title.text = data.Mechanic_Title;
+    }
+
+    public void HideTutorial(InputAction.CallbackContext context)
+    {
+        Player_InputDriver.Get_Interact.performed -= HideTutorial;
+        Tutorial_UIContainer.SetActive(false);
+        PlayerController.Get_Controller.Get_StateMachine.changeState(PlayerController.Get_Controller.Get_States[1]);
     }
 }

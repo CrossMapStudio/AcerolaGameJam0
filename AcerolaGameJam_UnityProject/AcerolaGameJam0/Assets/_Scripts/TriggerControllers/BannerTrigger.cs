@@ -6,7 +6,7 @@ public class BannerTrigger : MonoBehaviour
 {
     [SerializeField] private string Banner_Text;
     [SerializeField] private UICallChannelString Banner_Show;
-    [SerializeField] private UICallChannel Banner_Hide;
+    [SerializeField] private GenericCallChannel Banner_Hide;
 
     [SerializeField] private CameraTargetChannel CameraTargetChannel;
     [SerializeField] private Cinemachine.CinemachineVirtualCamera TargetCamera;
