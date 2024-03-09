@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: TempleFloorTileSheets
     originalName: 
-    pivot: {x: 2.2500002, y: -1.1083333}
+    pivot: {x: 0.49999997, y: -2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 68
-      height: 120
+      width: 128
+      height: 64
     spriteID: 347398d3ab162ab4e9f7b25b31968f87
     spriteBone: []
     spriteOutline: []
@@ -151,10 +151,10 @@ ScriptedImporter:
     - name: TempleFloorTileSheets
       frameIndex: 0
       cellRect:
-        x: 7
-        y: 133
-        width: 68
-        height: 120
+        x: 96
+        y: 128
+        width: 128
+        height: 64
       spriteId: 347398d3ab162ab4e9f7b25b31968f87
     linkedCells: []
     parentIndex: -1

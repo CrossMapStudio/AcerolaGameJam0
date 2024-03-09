@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3179030191146420789}
   - component: {fileID: 6061277774074482437}
-  - component: {fileID: 5597894773584781108}
   - component: {fileID: 5591876039313479893}
   - component: {fileID: 5477771344524937743}
+  - component: {fileID: 3495330207691620689}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b9dc10cb08696554485b443f9ce56133, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba5553a31b1e7704fba0ed66fbe29f15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,20 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5597894773584781108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2489905051646256781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61a0a9b736904364cb1804f74ef7e651, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _channel: {fileID: 11400000, guid: aef83be25af7ef643bf70751051cd29d, type: 2}
-  Health: 15
 --- !u!50 &5591876039313479893
 Rigidbody2D:
   serializedVersion: 4
@@ -115,7 +101,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 9fa51b9bba938c9478777e4a612f0302, type: 2}
   m_IncludeLayers:
@@ -164,7 +150,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.5}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -173,3 +159,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.23131943, y: 0.20909357}
   m_EdgeRadius: 0
+--- !u!114 &3495330207691620689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2489905051646256781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3cf7c3e0147bf479b3b918cfc17775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Starting_Health: 15
+  Brain: {fileID: 11400000, guid: 453db1efd6f526645960f20dcf65ceaa, type: 2}
+  _DetectPlayerImmediate: 0
+  Detection_Radius: 1
+  Detection_Layers:
+    serializedVersion: 2
+    m_Bits: 8
