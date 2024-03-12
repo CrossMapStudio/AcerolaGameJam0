@@ -28,6 +28,7 @@ public class UIManager : SingletonPersistent<UIManager>
     public TMP_Text Banner_Text;
     #endregion
 
+    [SerializeField] private UICallChannelFloat Update_Health;
 
     [SerializeField] private GenericCallChannel Dash_Channel;
     [SerializeField] private UICallChannelFloat Dash_Update;
@@ -45,6 +46,7 @@ public class UIManager : SingletonPersistent<UIManager>
 
     protected override void Awake()
     {
+        Update_Health.OnEventRaised.AddListener(UpdateHealth);
         Dash_Channel.OnEventRaised.AddListener(UseDashNode);
         Dash_Update.OnEventRaised.AddListener(UpdateDashNode);
         Interact_Channel.OnEventRaised.AddListener(ToggleInteract);
@@ -55,6 +57,14 @@ public class UIManager : SingletonPersistent<UIManager>
         Banner_Anim.gameObject.SetActive(true);
 
         base.Awake();
+    }
+
+    public void UpdateHealth(float currentValue)
+    {
+        if (currentValue <= 0)
+            HealthBar.fillAmount = 0f;
+        else
+        HealthBar.fillAmount = currentValue / 100f;
     }
 
     public void UseDashNode()

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d50d44bf1a934248946497d875d86b6, type: 3}
+  m_Name: Attack_Basic
+  m_EditorClassIdentifier: 
+  ID: Attack_Basic
+  Driver: {fileID: 0}
+  Start_Attack_AnimationClipName: AttackStart_TempleBot
+  Launch_Attack_AnimationClipName: AttackLaunch_TempleBot
+  Finish_Attack_AnimationClipName: AttackFinished_TempleBot
+  Speed: 5
+  DamageRadius: 0.1
+  Damage: 5
+  Damage_Layer:
+    serializedVersion: 2
+    m_Bits: 1024

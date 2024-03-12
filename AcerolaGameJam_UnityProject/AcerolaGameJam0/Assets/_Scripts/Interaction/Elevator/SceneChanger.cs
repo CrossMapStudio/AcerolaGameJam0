@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class SceneChanger : MonoBehaviour
 {
+    public int SceneIndex;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManagement.ChangeScene(1);
+        SceneManagement.ChangeScene(SceneIndex);
     }
 }

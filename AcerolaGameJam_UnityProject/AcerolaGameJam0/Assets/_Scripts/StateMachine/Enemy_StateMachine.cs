@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemy_StateMachine
 {
     private Enemy_BaseState currentState, previousState;
-    public void changeState(Enemy_BaseState newState, Enemy_Brain Brain)
+    public void changeState(Enemy_BaseState newState)
     {
         if (!newState.checkValid())
             return;
@@ -17,7 +17,6 @@ public class Enemy_StateMachine
         }
         this.previousState = this.currentState;
         this.currentState = newState;
-        this.currentState.Brain = Brain;
         this.currentState.onEnter();
     }
 

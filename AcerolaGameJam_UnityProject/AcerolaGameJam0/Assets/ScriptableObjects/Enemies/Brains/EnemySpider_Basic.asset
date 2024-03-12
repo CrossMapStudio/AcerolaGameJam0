@@ -15,3 +15,5 @@ MonoBehaviour:
   Enemy_States:
   - {fileID: 11400000, guid: 06dab9b7578037444837893711d3ac14, type: 2}
   - {fileID: 11400000, guid: e1f32957e3c441c41956cc861c73cf46, type: 2}
+  - {fileID: 11400000, guid: 0b19fb88056ec24469ce107669435676, type: 2}
+  - {fileID: 11400000, guid: 22b78dd19216896478a0e7e006f7d592, type: 2}

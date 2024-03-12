@@ -6,7 +6,8 @@ public abstract class Enemy_BaseState : ScriptableObject
 {
     public string ID;
     [HideInInspector]
-    public Enemy_Brain Brain;
+    public Enemy_Driver Driver;
+
     public abstract void onEnter();
     public abstract void onUpdate();
     public abstract void onFixedUpdate();

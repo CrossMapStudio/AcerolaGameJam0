@@ -21,6 +21,7 @@ public class PlayerState_FreeMovement : BaseState
         Player_InputDriver.Get_Dash.performed += Dash;
         Player_InputDriver.Get_AttackLight.performed += Attack;
         Player_InputDriver.Get_Interact.performed += Interact.RaiseEvent;
+        PlayerController.Get_Controller.Player_CombatChannel.OnEventRaised.AddListener(PlayerController.Get_Controller.Take_Damage);
 
         //Reset
         Active_InteractionBase = null;
@@ -31,6 +32,7 @@ public class PlayerState_FreeMovement : BaseState
         Player_InputDriver.Get_Dash.performed -= Dash;
         Player_InputDriver.Get_AttackLight.performed -= Attack;
         Player_InputDriver.Get_Interact.performed -= Interact.RaiseEvent;
+        PlayerController.Get_Controller.Player_CombatChannel.OnEventRaised.RemoveListener(PlayerController.Get_Controller.Take_Damage);
 
         On_InteractionSetExit();
     }

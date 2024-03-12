@@ -6,11 +6,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Basic Enemy Tracking State", menuName = "Enemy State/Tracking Enemy State")]
 public class Enemy_Tracking : Enemy_BaseState
 {
-    public Enemy_Tracking()
-    {
+    [SerializeField] private float Speed = 1.5f;
+    //General Movement has One Animation ---
+    [SerializeField] private string AnimationClip_Name;
 
-    }
-    
     public override bool checkValid()
     {
         return true;
@@ -18,18 +17,27 @@ public class Enemy_Tracking : Enemy_BaseState
 
     public override void onEnter()
     {
-
+        Driver.ChangeToHitState_Channel.AddListener(Enter_HitState);
+        Driver.Get_Animator.Play(AnimationClip_Name, 0, 0);
     }
 
     public override void onExit()
     {
-      
+        Driver.ChangeToHitState_Channel.RemoveListener(Enter_HitState);
     }
 
     public override void onFixedUpdate()
     {
-        Vector3 direction = (Brain.Get_Driver.Get_Target.position - Brain.Get_Driver.Get_Position).normalized;
-        Brain.Get_Driver.Get_EnemyRB.MovePosition(Brain.Get_Driver.Get_EnemyRB.transform.position + (direction * 1.5f * Time.deltaTime));
+        Vector3 direction = (Driver.Get_Target.position - Driver.Get_Position).normalized;
+        Driver.Get_EnemyRB.MovePosition(Driver.Get_EnemyRB.transform.position + (direction * Speed * Time.deltaTime));
+        if (direction.x < 0)
+        {
+            Driver.Get_Renderer.flipX = true;
+        }
+        else
+        {
+            Driver.Get_Renderer.flipX = false;
+        }
     }
 
     public override void onInactiveUpdate()
@@ -44,6 +52,14 @@ public class Enemy_Tracking : Enemy_BaseState
 
     public override void onUpdate()
     {
+        if (Vector2.Distance(Driver.Get_Target.position, Driver.Get_EnemyRB.position) <= .75f)
+        {
+            Driver.Offensive_StateChange();
+        }
+    }
 
+    public void Enter_HitState()
+    {
+        Driver.EnemyStateMachine.changeState(Driver.Enemy_States[2]);
     }
 }

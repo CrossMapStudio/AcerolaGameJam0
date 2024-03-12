@@ -7,6 +7,8 @@ TagManager:
   - Interaction
   - Weapon
   - Enemy
+  - Enemy_Weapon
+  - Player_HitBox
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - Destructable
   - Interaction
   - Weapon
-  - 
-  - 
+  - Enemy_Weapon
+  - Player_HitBox
   - 
   - 
   - 

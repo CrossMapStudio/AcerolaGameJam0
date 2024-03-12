@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerController : SingletonPersistent<PlayerController> 
@@ -42,15 +43,32 @@ public class PlayerController : SingletonPersistent<PlayerController>
     public float Interaction_Distance;
     public LayerMask Interaction_Layer;
 
+    
+    
     //Player Health --- Used for Calling Death State
     private float Health = 100f;
     public float Get_Health => Health;
+    public Combat_Channel Player_CombatChannel;
+    public UICallChannelFloat HealthBarUpdate;
+
+    //Animation Based Channels ---
+
     //Player Shard Collection ---
     private Shards_Interaction Current_Shard;
     public Shards_Interaction GetSet_CurrentShard { get => Current_Shard; set => Current_Shard = value; }
 
+    #region Animation Links
+    [SerializeField] private AnimationChannel_Link AnimatorLinkChannels;
+    [HideInInspector]
+    public Animation_Invoke On_Init, On_Event, On_Finish;
+    #endregion
+
+    //Used in the Hit State for Direction to Add Force ---
+    [HideInInspector] public Vector2 Hit_ForceDirection;
+
     protected override void Awake()
     {
+        base.Awake();
         Controller = this;
 
         Player_StateMachine = new StateMachine();
@@ -59,7 +77,14 @@ public class PlayerController : SingletonPersistent<PlayerController>
         DashValues = new Dash_Values();
         AttackValues = new Attack_Values();
 
-        base.Awake();
+        AnimatorLinkChannels.On_Init = Instantiate(AnimatorLinkChannels.On_Init);
+        On_Init = AnimatorLinkChannels.On_Init;
+
+        AnimatorLinkChannels.On_Event = Instantiate(AnimatorLinkChannels.On_Event);
+        On_Event = AnimatorLinkChannels.On_Event;
+
+        AnimatorLinkChannels.On_Finish = Instantiate(AnimatorLinkChannels.On_Finish);
+        On_Finish = AnimatorLinkChannels.On_Finish;
     }
 
     public void Start()
@@ -92,6 +117,24 @@ public class PlayerController : SingletonPersistent<PlayerController>
     private void Change_PlayerState(int StateIndex)
     {
         Player_StateMachine.changeState(States[StateIndex]);
+    }
+
+    public void Take_Damage(Vector2 direction, float damage)
+    {
+        Hit_ForceDirection = direction;
+        Health -= damage;
+        HealthBarUpdate.RaiseEvent(Health);
+        Debug.Log("Damage: " + damage);
+        if (Health <= 0f)
+        {
+            Player_StateMachine.changeState(States[5]);
+            Debug.Log("Player Dead");
+        }
+        else
+        {
+            Player_StateMachine.changeState(States[4]);
+
+        }
     }
 }
 

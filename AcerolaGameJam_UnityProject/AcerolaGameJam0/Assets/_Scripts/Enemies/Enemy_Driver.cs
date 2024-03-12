@@ -2,45 +2,95 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Enemy_Driver : MonoBehaviour
 {
-    [SerializeField] private float Starting_Health;
-    [SerializeField] private Enemy_Brain Set_InspectorBrain;
-    private Enemy_Brain Brain;
-    //Collect Data within the Enemy Driver and The Brain will Utilize it to Produce Enemy Actions ---
+    [HideInInspector]
+    public Guid EnemyInstance_Key;
+    [HideInInspector] public Guid_Channel Spawn_PointLink;
 
-    //Player Detection
-    [SerializeField] private bool _DetectPlayerImmediate;
-    
-    private Transform Target;
-    public Transform Get_Target => Target;
-
+    #region Enemy Data
+    public float Starting_Health;
     [SerializeField] private float Detection_Radius;
     [SerializeField] private LayerMask Detection_Layers;
-
-    //Driver Actions that the Brain Listens too ---
-    private Action<Transform> Call_SetTarget;
-    public Action<Transform> GetSet_CallTarget { get => Call_SetTarget; set => Call_SetTarget = value; }
 
     //Rigidbody
     private Rigidbody2D Enemy_RB;
     public Rigidbody2D Get_EnemyRB => Enemy_RB;
 
+    [SerializeField] private SpriteRenderer _Renderer;
+    public SpriteRenderer Get_Renderer => _Renderer;
+
+    //Player Detection
+    [SerializeField] private bool _DetectPlayerImmediate;
+    #endregion
+
+    #region Information Pass
     public Vector3 Get_Position => transform.position;
+    [HideInInspector]
+    public Vector2 TargetPosition;
+
+    private Transform Target;
+    public Transform Get_Target => Target;
+
+    [HideInInspector]
+    public Vector2 Hit_Direction;
+    #endregion
+
+    #region Channels
+    public Combat_Channel CombatChannel;
+    public Combat_Channel Player_CombatChannel;
+    [HideInInspector]
+    public UnityEvent ChangeToHitState_Channel;
+    #endregion
+
+    #region StateMachine
+    [HideInInspector]
+    public Enemy_StateMachine EnemyStateMachine;
+    #endregion
+
+    #region States
+    public List<Enemy_BaseState> Enemy_States;
+    #endregion
+
+    #region Animator
+    [SerializeField] private Animator Enemy_Animator;
+    public Animator Get_Animator => Enemy_Animator;
+    #endregion
+
+    #region Particle Systems
+    public ParticleSystem Enemy_Hit_ParticleSystem;
+    #endregion
+
+    #region Animation Links
+    [SerializeField] private AnimationChannel_Link AnimatorLinkChannels;
+    
+    [HideInInspector]
+    public Animation_Invoke On_Init, On_Event, On_Finish;
+    #endregion
 
     public void Awake()
     {
-        Brain = ScriptableObject.CreateInstance<Enemy_Basic>();
-
+        EnemyStateMachine = new Enemy_StateMachine();
         Enemy_RB = GetComponent<Rigidbody2D>();
 
-        GetSet_CallTarget += SetTarget; 
+        for(int i = 0; i < Enemy_States.Count; i++)
+        {
+            //Create Instances for these ---
+            Enemy_States[i] = Instantiate(Enemy_States[i]);
+            Enemy_States[i].Driver = this;
+        }
 
-        Brain.Init_Enemy(this);
-        if (_DetectPlayerImmediate)
-            Call_SetTarget(PlayerController.Get_Controller.Get_PlayerRB.transform);
+        AnimatorLinkChannels.On_Init = Instantiate(AnimatorLinkChannels.On_Init);
+        On_Init = AnimatorLinkChannels.On_Init;
+
+        AnimatorLinkChannels.On_Event = Instantiate(AnimatorLinkChannels.On_Event);
+        On_Event = AnimatorLinkChannels.On_Event;
+
+        AnimatorLinkChannels.On_Finish = Instantiate(AnimatorLinkChannels.On_Finish);
+        On_Finish = AnimatorLinkChannels.On_Finish;
     }
 
     public void SetTarget(Transform _Target)
@@ -50,26 +100,69 @@ public class Enemy_Driver : MonoBehaviour
 
     public void Update()
     {
-        Brain.Update();
+        EnemyStateMachine.executeStateUpdate();
     }
 
     public void FixedUpdate()
     {
-        Brain.FixedUpdate();
+        EnemyStateMachine.executeStateFixedUpdate();
 
+        //Calls Once if Target in Range ---
         if (Target == null)
         {
             Collider2D Player_Collider = Physics2D.OverlapCircle(transform.position, Detection_Radius, Detection_Layers);
             //Detect Closest Target --- Set For Duration, Then Check Again??? --- For now just detect the Player
             if (Player_Collider != null)
-                Call_SetTarget(PlayerController.Get_Controller.Get_PlayerRB.transform);
+            {
+                EnemyStateMachine.changeState(Enemy_States[1]);
+                Target = PlayerController.Get_Controller.Get_PlayerRB.transform;
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.name);
+        if (collision.gameObject.tag == "Weapon")
+        {
+            CombatChannel.OnEventRaised.AddListener(Take_Damage);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Weapon")
+        {
+            CombatChannel.OnEventRaised.RemoveListener(Take_Damage);
         }
     }
 
     public void LateUpdate()
     {
-        Brain.LateUpdate();
+        EnemyStateMachine.executeStateLateUpdate();
     }
 
-    //Info to Collect --- Target Player Position, If Player Detected, If Detection Needed --- Taking Damage, Health <= 0,  
+    public void Take_Damage(Vector2 direction, float damage)
+    {
+        float dot = Vector2.Dot(direction, ((Vector2)transform.position - PlayerController.Get_Controller.Get_PlayerRB.position).normalized);
+        Debug.Log("Hit Dot Product: " + dot);
+
+        if (dot >= .3f || Vector2.Distance(transform.position, PlayerController.Get_Controller.Get_PlayerRB.position) <= .25f)
+        {
+            TargetPosition = ((Vector2)transform.position - PlayerController.Get_Controller.Get_PlayerRB.position).normalized * 12f;
+            Starting_Health -= damage;
+            Debug.Log("Damage: " + damage);
+            ChangeToHitState_Channel.Invoke();
+        }
+
+        if (Starting_Health <= 0f)
+        {
+            Spawn_PointLink.RaiseEvent(EnemyInstance_Key);
+            Destroy(gameObject);
+        }
+    }
+
+    public void Offensive_StateChange()
+    {
+        EnemyStateMachine.changeState(Enemy_States[4]);
+    }
 }

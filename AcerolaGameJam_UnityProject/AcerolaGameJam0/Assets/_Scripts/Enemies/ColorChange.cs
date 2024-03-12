@@ -14,9 +14,6 @@ public class ColorChange : MonoBehaviour
     private Vector2 TargetPosition;
     [SerializeField] private float Health = 100f;
 
-    //If the Enemy is Bashed ---
-    private Vector2 TargetPosition_Bash;
-
     private void Awake()
     {
         _renderer = GetComponent<SpriteRenderer>();

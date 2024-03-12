@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Tracking_Basic
   m_EditorClassIdentifier: 
   ID: Enemy_Tracking
-  Brain: {fileID: 11400000, guid: 453db1efd6f526645960f20dcf65ceaa, type: 2}
-  Speed: 0.5
+  Driver: {fileID: 0}
+  Speed: 1.5
+  AnimationClip_Name: Running_TempleBot

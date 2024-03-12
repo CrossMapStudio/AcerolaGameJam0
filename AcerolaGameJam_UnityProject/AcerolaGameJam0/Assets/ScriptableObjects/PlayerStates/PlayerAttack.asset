@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Player Attack
   comboCountLimit: 3
-  StepDistance: 7
+  StepDistance: 5
   MovementInfluence: 0.45
   Assigned_WeaponType: {fileID: 11400000, guid: 4ed2f009b8809374ea0fd2ab45a10a12, type: 2}
   On_LightInitialized: {fileID: 11400000, guid: 7e1d6af141737a6418a60ab0b437bb36, type: 2}

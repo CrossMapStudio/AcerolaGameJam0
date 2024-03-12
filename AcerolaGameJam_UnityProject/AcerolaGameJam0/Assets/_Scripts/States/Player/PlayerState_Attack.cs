@@ -21,8 +21,6 @@ public class PlayerState_Attack : BaseState
 
     //Weapon Type
     [SerializeField] private Melee Assigned_WeaponType;
-    [SerializeField] private Animation_Invoke On_LightInitialized, On_LightEvent, On_LightFinished;
-
     #region Camera Channel
     [SerializeField] private float CameraShake_Amplitude, CameraShake_Frequency, CameraShake_Smooth;
     [SerializeField] private CameraShake_Channel CameraShakeChannel;
@@ -31,17 +29,14 @@ public class PlayerState_Attack : BaseState
 
     public override bool checkValid()
     {
-        On_LightInitialized.OnEventRaised.RemoveAllListeners();
-        On_LightEvent.OnEventRaised.RemoveAllListeners();
-        On_LightFinished.OnEventRaised.RemoveAllListeners();
 
         Debug.Log("Weapon Type: " + Assigned_WeaponType);
 
         Assigned_WeaponType.Get_OnAttackFinish.AddListener(On_AttackFinished);
 
-        On_LightInitialized.OnEventRaised.AddListener(Assigned_WeaponType.OnLightAttack_Initialized);
-        On_LightEvent.OnEventRaised.AddListener(Assigned_WeaponType.OnLightAttack_AnimationEvent);
-        On_LightFinished.OnEventRaised.AddListener(Assigned_WeaponType.OnLightAttack_Finished);
+        PlayerController.Get_Controller.On_Init.OnEventRaised.AddListener(Assigned_WeaponType.OnLightAttack_Initialized);
+        PlayerController.Get_Controller.On_Event.OnEventRaised.AddListener(Assigned_WeaponType.OnLightAttack_AnimationEvent);
+        PlayerController.Get_Controller.On_Finish.OnEventRaised.AddListener(Assigned_WeaponType.OnLightAttack_Finished);
         PlayerController.Get_Controller.GetAttack_Values.comboCount = 0;
         return true;
     }
@@ -56,6 +51,8 @@ public class PlayerState_Attack : BaseState
         Player_InputDriver.Get_Dash.performed += Dash;
         QueueAction = null;
         PerformAttack();
+
+        PlayerController.Get_Controller.Player_CombatChannel.OnEventRaised.AddListener(PlayerController.Get_Controller.Take_Damage);
     }
 
     public override void onExit()
@@ -63,6 +60,12 @@ public class PlayerState_Attack : BaseState
         Player_InputDriver.Get_Dash.performed -= Dash;
         Player_InputDriver.Get_AttackLight.performed -= QueueAttack;
         Assigned_WeaponType.Get_OnAttackFinish.RemoveListener(On_AttackFinished);
+
+        PlayerController.Get_Controller.On_Init.OnEventRaised.RemoveAllListeners();
+        PlayerController.Get_Controller.On_Event.OnEventRaised.RemoveAllListeners();
+        PlayerController.Get_Controller.On_Finish.OnEventRaised.RemoveAllListeners();
+
+        PlayerController.Get_Controller.Player_CombatChannel.OnEventRaised.RemoveListener(PlayerController.Get_Controller.Take_Damage);
     }
     public override void onUpdate()
     {

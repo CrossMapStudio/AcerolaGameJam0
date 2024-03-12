@@ -12,10 +12,12 @@ public class Enemy_Idle : Enemy_BaseState
 
     public override void onEnter()
     {
+
     }
 
     public override void onExit()
     {
+
     }
 
     public override void onFixedUpdate()
@@ -32,5 +34,11 @@ public class Enemy_Idle : Enemy_BaseState
 
     public override void onUpdate()
     {
+
+    }
+
+    public void Begin_Tracking()
+    {
+
     }
 }

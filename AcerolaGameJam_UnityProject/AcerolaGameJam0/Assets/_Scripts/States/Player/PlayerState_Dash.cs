@@ -34,7 +34,15 @@ public class PlayerState_Dash : BaseState
 
     public override bool checkValid()
     {
-        if (PlayerController.Get_Controller.Get_DashValues.Current_DashAmount < Dash_AmountTarget) return true; else return false;
+        if (PlayerController.Get_Controller.Get_DashValues.Current_DashAmount < Dash_AmountTarget)
+        {
+            return true;
+        }
+        else
+        {
+            PlayerController.Get_Controller.Get_StateMachine.changeState(PlayerController.Get_Controller.Get_States[1]);
+            return false;
+        }
     }
 
     public override void onEnter()
