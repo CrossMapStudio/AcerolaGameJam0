@@ -14,11 +14,16 @@ public class Enemy_SpawnPoint : MonoBehaviour
     private Dictionary<Guid, Enemy_Driver> CurrentSpawnList;
     [SerializeField] private Guid_Channel GuidCall_Channel;
 
+    [SerializeField] private GenericCallChannel GameManagerReset_LevelChannel;
+
     private void Awake()
     {
         GuidCall_Channel = Instantiate(GuidCall_Channel);
         GuidCall_Channel.OnEventRaised.AddListener(Remove_EnemyInstance);
         CurrentSpawnList = new Dictionary<Guid, Enemy_Driver>();
+
+        //Add on the Awake ---
+        GameManagerReset_LevelChannel.OnEventRaised.AddListener(Restart_Section);
     }
 
     private void Start()

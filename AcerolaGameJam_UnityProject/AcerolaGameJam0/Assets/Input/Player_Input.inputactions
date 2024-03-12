@@ -220,6 +220,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "DeathScreen",
+            "id": "e7332228-c90c-4be5-8494-2f3319a5a6b0",
+            "actions": [
+                {
+                    "name": "Continue",
+                    "type": "Button",
+                    "id": "dfe3701f-e10f-4e62-aa37-6fe497923490",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4437de0a-4ae7-4783-81d9-faf1f078ca73",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Continue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8884f43b-d393-4695-babf-3077cab20c0c",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Continue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

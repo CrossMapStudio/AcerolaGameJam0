@@ -17,6 +17,7 @@ public class PlayerState_Dead : BaseState
     //Play
 
     [SerializeField] private string DeathAnimation_ClipName;
+    [SerializeField] private GenericCallChannel UI_DeathScreen;
     public override bool checkValid()
     {
         return true;
@@ -25,14 +26,14 @@ public class PlayerState_Dead : BaseState
     public override void onEnter()
     {
         PlayerController.Get_Controller.Get_PlayerAnimator.Play(DeathAnimation_ClipName, 0, 0);
-        PlayerController.Get_Controller.On_Finish.OnEventRaised.AddListener(Call_UIClose);
+        PlayerController.Get_Controller.On_Finish.OnEventRaised.AddListener(Death_Screen);
 
         PlayerController.Get_Controller.Get_PlayerRB.velocity = Vector2.zero;
     }
 
     public override void onExit()
     {
-        PlayerController.Get_Controller.On_Finish.OnEventRaised.RemoveListener(Call_UIClose);
+        PlayerController.Get_Controller.On_Finish.OnEventRaised.RemoveListener(Death_Screen);
     }
 
     public override void onFixedUpdate()
@@ -55,8 +56,8 @@ public class PlayerState_Dead : BaseState
 
     }
 
-    public void Call_UIClose()
+    public void Death_Screen()
     {
-        //Close the UI --- Wait for Input to Respawn ---
+        UI_DeathScreen.RaiseEvent();
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -12,20 +13,59 @@ public class GameManager : SingletonPersistent<GameManager>
     private Dictionary<string, bool> Section_Status;
     public Dictionary<string, bool> Get_SectionStatus => Section_Status;
 
+    public GenericCallChannel Respawn_Channel_UI;
+    Respawn_Data CurrentRespawnData;
+
+    [SerializeField] private GenericCallChannel Level_InitChannel;
+
     protected override void Awake()
     {
         base.Awake();
         _GameManager = this;
         Section_Status = new Dictionary<string, bool>();
 
+        //When the Game First Launches ---
         SceneManagement.ChangeScene(1);
+    }
+
+    public void Set_Spawn(Respawn_Data data)
+    {
+        CurrentRespawnData = data;
+    }
+
+    public void Check_SceneRespawn(InputAction.CallbackContext context)
+    {
+        if (CurrentRespawnData.Scene_Index != SceneManagement.Get_SceneIndex())
+        {
+            //Wait for Scene to Load ---
+            SceneManagement.ChangeScene(CurrentRespawnData.Scene_Index);
+            StartCoroutine(WaitForSceneLoad(CurrentRespawnData.Scene_Index));
+        }
+        else
+        {
+            //Load the Scene --- Player Respawn ---
+            Respawn();
+        }
+    }
+
+    IEnumerator WaitForSceneLoad(int sceneNumber)
+    {
+        while (SceneManagement.Get_SceneIndex() != sceneNumber)
+        {
+            yield return null;
+        }
+
+        Respawn();
     }
 
     protected void Respawn()
     {
-        
-    }
+        Level_InitChannel.RaiseEvent();
+        PlayerController.Get_Controller.Reset_Player();
+        PlayerController.Get_Controller.Get_PlayerRB.position = CurrentRespawnData.Respawn_Location;
 
+        Respawn_Channel_UI.RaiseEvent();
+    }
     #region Serielization
     // Save game state
     public void SaveGame()

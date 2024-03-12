@@ -31,18 +31,28 @@ public class UIManager : SingletonPersistent<UIManager>
     [SerializeField] private UICallChannelFloat Update_Health;
 
     [SerializeField] private GenericCallChannel Dash_Channel;
+    [SerializeField] private GenericCallChannel Death_Channel;
+    [SerializeField] private GenericCallChannel Respawn_Channel;
+
     [SerializeField] private UICallChannelFloat Dash_Update;
     [SerializeField] private UICallChannelInteract Interact_Channel;
 
     [SerializeField] private GenericCallChannel Banner_Hide;
     [SerializeField] private UICallChannelString Banner_Show;
 
-    //Tutorial
+    #region Tutorial
     [SerializeField] private TutorialUI_Channel Tutorial_Channel;
     [SerializeField] private GameObject Tutorial_UIContainer;
     [SerializeField] private VideoPlayer Tutorial_Player;
     [SerializeField] private Image KeyboardInput, GamepadInput;
     [SerializeField] private TMP_Text Mechanic_Title;
+    #endregion
+
+    #region Death Screen
+    [SerializeField] private Animator Death_ScreenAnimator;
+    [SerializeField] private string Death_ScreenShowAnimationName, Death_ScreenHideAnimationName;
+    #endregion
+
 
     protected override void Awake()
     {
@@ -55,6 +65,9 @@ public class UIManager : SingletonPersistent<UIManager>
 
         Tutorial_Channel.OnEventRaised.AddListener(ShowTutorial);
         Banner_Anim.gameObject.SetActive(true);
+
+        Death_Channel.OnEventRaised.AddListener(Show_DeathScreen);
+        Respawn_Channel.OnEventRaised.AddListener(Continue_Game);
 
         base.Awake();
     }
@@ -149,5 +162,22 @@ public class UIManager : SingletonPersistent<UIManager>
         Player_InputDriver.Get_Interact.performed -= HideTutorial;
         Tutorial_UIContainer.SetActive(false);
         PlayerController.Get_Controller.Get_StateMachine.changeState(PlayerController.Get_Controller.Get_States[1]);
+    }
+
+    public void Show_DeathScreen()
+    {
+        Death_ScreenAnimator.Play(Death_ScreenShowAnimationName, 0, 0);
+        Player_InputDriver.ChangeInputMap_DeathScreen();
+
+        Player_InputDriver.Get_Continue.performed += GameManager._GameManager.Check_SceneRespawn;
+    }
+
+    public void Continue_Game()
+    {
+        Death_ScreenAnimator.Play(Death_ScreenHideAnimationName, 0, 0);
+        Player_InputDriver.ChangeInputMap_PlayerControls();
+
+
+        Player_InputDriver.Get_Continue.performed -= GameManager._GameManager.Check_SceneRespawn;
     }
 }

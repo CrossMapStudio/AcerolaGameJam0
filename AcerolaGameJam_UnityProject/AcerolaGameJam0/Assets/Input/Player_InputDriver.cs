@@ -10,6 +10,8 @@ public class Player_InputDriver : SingletonPersistent<Player_InputDriver>
     private Player_Input Input_Controller;
     public Player_Input Get_Input => Input_Controller;
 
+    public static Player_InputDriver Input_Driver;
+
     private static InputAction Movement;
     public static InputAction Get_Movement => Movement;
 
@@ -27,18 +29,23 @@ public class Player_InputDriver : SingletonPersistent<Player_InputDriver>
 
     private static Vector2 StoredDirection = new Vector2(1, 0);
     public static Vector2 Get_StoredDirection => StoredDirection;
+
+    private static InputAction Continue;
+    public static InputAction Get_Continue => Continue;
     #endregion
 
     protected override void Awake()
     {
         base.Awake();
         //Create the Input System ---
+        Input_Driver = this;
         //Create a new instance for the Input ---
         Input_Controller = new Player_Input();
         Movement = Input_Controller.Player.Movement;
         Dash = Input_Controller.Player.Dash;
         Attack_Light = Input_Controller.Player.Attack;
         Interact = Input_Controller.Player.Interact;
+        Continue = Input_Controller.DeathScreen.Continue;
     }
 
     public void OnEnable()
@@ -48,11 +55,44 @@ public class Player_InputDriver : SingletonPersistent<Player_InputDriver>
         Dash.Enable();
         Attack_Light.Enable();
         Interact.Enable();
+        Continue.Enable();
+    }
+
+    public void OnDisable()
+    {
+        //Enable the Input ---
+        Movement.Disable();
+        Dash.Disable();
+        Attack_Light.Disable();
+        Interact.Disable();
+        Continue.Disable();
+    }
+
+    protected override void OnApplicationQuit()
+    {
+        base.OnApplicationQuit();
+        Movement.Dispose();
+        Dash.Dispose();
+        Attack_Light.Dispose();
+        Interact.Dispose();
+        Continue.Dispose();
     }
 
     public void Update()
     {
         Vector2 MovementVector = Movement.ReadValue<Vector2>();
         StoredDirection = MovementVector != Vector2.zero ? MovementVector : StoredDirection;
+    }
+
+    public static void ChangeInputMap_DeathScreen()
+    {
+        Input_Driver.Get_Input.Player.Disable();
+        Input_Driver.Get_Input.DeathScreen.Enable();
+    }
+
+    public static void ChangeInputMap_PlayerControls()
+    {
+        Input_Driver.Get_Input.Player.Enable();
+        Input_Driver.Get_Input.DeathScreen.Disable();
     }
 }

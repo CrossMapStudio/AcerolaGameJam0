@@ -119,6 +119,16 @@ public class PlayerController : SingletonPersistent<PlayerController>
         Player_StateMachine.changeState(States[StateIndex]);
     }
 
+    public void Reset_Player()
+    {
+        Health = 100f;
+        DashValues.ResetValues();
+        AttackValues.ResetValues();
+
+        HealthBarUpdate.RaiseEvent(Health);
+        Player_StateMachine.changeState(States[1]);
+    }
+
     public void Take_Damage(Vector2 direction, float damage)
     {
         Hit_ForceDirection = direction;
@@ -143,11 +153,23 @@ public class Dash_Values
     public float Current_DashRecovery = 0f;
     public float Current_DashTime = 0f;
     public int Current_DashAmount = 0;
+
+    public void ResetValues()
+    {
+        Current_DashRecovery = 0f;
+        Current_DashTime = 0f;
+        Current_DashAmount = 0;
+    }
 }
 
 public class Attack_Values
 {
     public int comboCount = 0;
+
+    public void ResetValues()
+    {
+        comboCount = 0;
+    }
 }
 
 

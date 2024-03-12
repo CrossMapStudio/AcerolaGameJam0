@@ -242,6 +242,45 @@ public partial class @Player_Input: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""DeathScreen"",
+            ""id"": ""e7332228-c90c-4be5-8494-2f3319a5a6b0"",
+            ""actions"": [
+                {
+                    ""name"": ""Continue"",
+                    ""type"": ""Button"",
+                    ""id"": ""dfe3701f-e10f-4e62-aa37-6fe497923490"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""4437de0a-4ae7-4783-81d9-faf1f078ca73"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Continue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8884f43b-d393-4695-babf-3077cab20c0c"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Continue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -252,6 +291,9 @@ public partial class @Player_Input: IInputActionCollection2, IDisposable
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        // DeathScreen
+        m_DeathScreen = asset.FindActionMap("DeathScreen", throwIfNotFound: true);
+        m_DeathScreen_Continue = m_DeathScreen.FindAction("Continue", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -379,11 +421,61 @@ public partial class @Player_Input: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // DeathScreen
+    private readonly InputActionMap m_DeathScreen;
+    private List<IDeathScreenActions> m_DeathScreenActionsCallbackInterfaces = new List<IDeathScreenActions>();
+    private readonly InputAction m_DeathScreen_Continue;
+    public struct DeathScreenActions
+    {
+        private @Player_Input m_Wrapper;
+        public DeathScreenActions(@Player_Input wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Continue => m_Wrapper.m_DeathScreen_Continue;
+        public InputActionMap Get() { return m_Wrapper.m_DeathScreen; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DeathScreenActions set) { return set.Get(); }
+        public void AddCallbacks(IDeathScreenActions instance)
+        {
+            if (instance == null || m_Wrapper.m_DeathScreenActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_DeathScreenActionsCallbackInterfaces.Add(instance);
+            @Continue.started += instance.OnContinue;
+            @Continue.performed += instance.OnContinue;
+            @Continue.canceled += instance.OnContinue;
+        }
+
+        private void UnregisterCallbacks(IDeathScreenActions instance)
+        {
+            @Continue.started -= instance.OnContinue;
+            @Continue.performed -= instance.OnContinue;
+            @Continue.canceled -= instance.OnContinue;
+        }
+
+        public void RemoveCallbacks(IDeathScreenActions instance)
+        {
+            if (m_Wrapper.m_DeathScreenActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IDeathScreenActions instance)
+        {
+            foreach (var item in m_Wrapper.m_DeathScreenActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_DeathScreenActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public DeathScreenActions @DeathScreen => new DeathScreenActions(this);
     public interface IPlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+    }
+    public interface IDeathScreenActions
+    {
+        void OnContinue(InputAction.CallbackContext context);
     }
 }
