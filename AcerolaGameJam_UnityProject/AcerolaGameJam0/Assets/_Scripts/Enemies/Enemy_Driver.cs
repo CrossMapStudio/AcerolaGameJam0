@@ -53,6 +53,11 @@ public class Enemy_Driver : MonoBehaviour
 
     #region States
     public List<Enemy_BaseState> Enemy_States;
+
+    private int OffensiveStateSequences_Index = 0;
+    public List<Offensive_StateGroup> Offensive_StateSequences;
+    private Offensive_StateGroup Active_StateGroup;
+    public Offensive_StateGroup Get_ActiveOffesiveStateGroup => Active_StateGroup;
     #endregion
 
     #region Animator
@@ -71,6 +76,10 @@ public class Enemy_Driver : MonoBehaviour
     public Animation_Invoke On_Init, On_Event, On_Finish;
     #endregion
 
+    #region Ranged
+    public Transform Modified_FirePoint;
+    #endregion
+
     public void Awake()
     {
         EnemyStateMachine = new Enemy_StateMachine();
@@ -83,6 +92,11 @@ public class Enemy_Driver : MonoBehaviour
             Enemy_States[i].Driver = this;
         }
 
+        for (int i = 0; i < Offensive_StateSequences.Count; i++)
+        {
+            Offensive_StateSequences[i].Initialize_States(this);
+        }
+
         AnimatorLinkChannels.On_Init = Instantiate(AnimatorLinkChannels.On_Init);
         On_Init = AnimatorLinkChannels.On_Init;
 
@@ -91,6 +105,8 @@ public class Enemy_Driver : MonoBehaviour
 
         AnimatorLinkChannels.On_Finish = Instantiate(AnimatorLinkChannels.On_Finish);
         On_Finish = AnimatorLinkChannels.On_Finish;
+
+        Active_StateGroup = Offensive_StateSequences[OffensiveStateSequences_Index];
     }
 
     public void SetTarget(Transform _Target)
@@ -156,13 +172,60 @@ public class Enemy_Driver : MonoBehaviour
 
         if (Starting_Health <= 0f)
         {
-            Spawn_PointLink.RaiseEvent(EnemyInstance_Key);
+            if (Spawn_PointLink != null)
+                Spawn_PointLink.RaiseEvent(EnemyInstance_Key);
             Destroy(gameObject);
         }
     }
 
     public void Offensive_StateChange()
     {
-        EnemyStateMachine.changeState(Enemy_States[4]);
+        //Check Distance to Player --- Options within the Offensive States --- Track Last Picked Option ---
+        var option = Get_ActiveOffesiveStateGroup.Get_OffensiveOption();
+
+        if (option == null)
+        {
+            OffensiveStateSequences_Index++;
+            if (OffensiveStateSequences_Index >= Offensive_StateSequences.Count)
+                OffensiveStateSequences_Index = 0;
+
+            EnemyStateMachine.changeState(Enemy_States[1]);
+            return;
+        }
+
+        EnemyStateMachine.changeState(option);
+    }
+}
+
+[Serializable]
+public class Offensive_StateGroup
+{
+    public float Range;
+    [HideInInspector]
+    public int Previous_Index;
+    public List<Enemy_BaseState> Offensive_Options;
+
+    public void Initialize_States(Enemy_Driver Driver)
+    {
+        for (int i = 0; i < Offensive_Options.Count; i++)
+        {
+            //Create Instances for these ---
+            Offensive_Options[i] = GameObject.Instantiate(Offensive_Options[i]);
+            Offensive_Options[i].Driver = Driver;
+        }
+    }
+
+    public Enemy_BaseState Get_OffensiveOption()
+    {
+        if (Previous_Index >= Offensive_Options.Count)
+        {
+            //Iterate to the Next Offensive Option ---
+            Previous_Index = 0;
+            return null;
+        }
+
+        var option = Offensive_Options[Previous_Index];
+        Previous_Index++;
+        return option;
     }
 }

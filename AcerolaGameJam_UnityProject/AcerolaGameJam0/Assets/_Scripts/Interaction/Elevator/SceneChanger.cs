@@ -2,12 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneChanger : MonoBehaviour
+public class SceneChanger : Interactable
 {
-    public int SceneIndex;
+    public int sceneIndex;
+    [SerializeField] private GenericCallChannel Set_Target;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void On_Enter()
     {
-        SceneManagement.ChangeScene(SceneIndex);
+
+    }
+
+    protected override void On_Exit()
+    {
+
+    }
+
+    protected override void On_Interact()
+    {
+        GameManager._GameManager.SceneChange_SetTarget = Set_Target;
+        SceneManagement.ChangeScene(sceneIndex);
     }
 }

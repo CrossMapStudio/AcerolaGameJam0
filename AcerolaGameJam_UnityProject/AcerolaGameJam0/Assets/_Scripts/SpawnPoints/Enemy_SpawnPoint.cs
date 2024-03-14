@@ -16,6 +16,10 @@ public class Enemy_SpawnPoint : MonoBehaviour
 
     [SerializeField] private GenericCallChannel GameManagerReset_LevelChannel;
 
+    [SerializeField] private bool Combat_ZoneTrigger;
+    [SerializeField] private GenericBoolCallChannel Zone_Channel;
+    private bool Zone_Triggered;
+
     private void Awake()
     {
         GuidCall_Channel = Instantiate(GuidCall_Channel);
@@ -34,14 +38,37 @@ public class Enemy_SpawnPoint : MonoBehaviour
             GameManager._GameManager.Get_SectionStatus.Add(Section_ID, false);
         }
 
-        Repopulate_SpawnSection();
+        if (!Combat_ZoneTrigger)
+        {
+            Repopulate_SpawnSection();
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Section has been Cleared.
+        if (GameManager._GameManager.Get_SectionStatus[Section_ID])
+            return;
+
+        if (collision.tag == "Player" && !Zone_Triggered)
+        {
+            Zone_Triggered = true;
+            //Invoke the Call Channel
+            Repopulate_SpawnSection();
+            if (Zone_Channel != null)
+                Zone_Channel.RaiseEvent(true);
+        }
     }
 
     public void Restart_Section()
     {
         //Delete All Enemies --- Respawn Enemies
         Depopulate_SpawnSection();
-        Repopulate_SpawnSection();
+        if (Zone_Triggered)
+            Zone_Triggered = false;
+
+        if (!Combat_ZoneTrigger)
+            Repopulate_SpawnSection();
     }
 
     private void Repopulate_SpawnSection()
@@ -102,6 +129,12 @@ public class Enemy_SpawnPoint : MonoBehaviour
         {
             //Section was Cleared ---
             GameManager._GameManager.Get_SectionStatus[Section_ID] = true;
+
+            if (Combat_ZoneTrigger)
+            {
+                if (Zone_Channel != null)
+                    Zone_Channel.RaiseEvent(false);
+            }
         }
     }
 

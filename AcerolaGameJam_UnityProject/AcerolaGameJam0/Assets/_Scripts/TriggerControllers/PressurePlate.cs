@@ -6,7 +6,7 @@ public class PressurePlate : MonoBehaviour
 {
     //Channel to Connect to Time Fix Events ---
     [SerializeField] private GenericCallChannel ActivateChannel;
-    [SerializeField] private GenericCallChannel Channel;
+    [SerializeField] private GenericBoolCallChannel Channel;
     [SerializeField] private bool PoweredOn = true;
 
     [SerializeField] private Animator _Anim;
@@ -34,7 +34,7 @@ public class PressurePlate : MonoBehaviour
         {
             if (Channel != null && PoweredOn)
             {
-                Channel.RaiseEvent();
+                Channel.RaiseEvent(false);
                 //Play Anim ---
                 if (_Anim != null)
                     _Anim.Play(OnTriggerEnterAnimationName);

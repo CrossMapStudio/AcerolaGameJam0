@@ -15,9 +15,27 @@ public class Shards_Interaction : Interactable
 
     public Collider2D InteractionCollider;
 
+    public string Shard_ID;
+    [SerializeField] private GenericCallChannel GameManagerReset_LevelChannel;
+
     protected virtual void Awake()
     {
         base.Awake();
+    }
+
+    private void Start()
+    {
+        if (GameManager._GameManager.Get_TimeShardStatus.ContainsKey(Shard_ID))
+        {
+            if (GameManager._GameManager.Get_TimeShardStatus[Shard_ID])
+            {
+                gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            GameManager._GameManager.Get_TimeShardStatus.Add(Shard_ID, false);
+        }
     }
 
     public void LateUpdate()
@@ -54,13 +72,27 @@ public class Shards_Interaction : Interactable
         {
             Shard_Animator.Play("TimeShardCollect");
             //Add Shard to Player Count ---
+            PlayerController.Get_Controller.Shard_Active = true;
             PlayerController.Get_Controller.GetSet_CurrentShard = this;
             Target = PlayerController.Get_Controller.Get_PlayerRB.transform;
             InteractionCollider.enabled = false;
+
+            //Collected ---
+            GameManager._GameManager.Get_TimeShardStatus[Shard_ID] = true;
         }
         else
         {
             //Reject ---
         }
+    }
+
+    public void Set_Follow()
+    {
+        Shard_Animator.Play("TimeShardCollect");
+        //Add Shard to Player Count ---
+        PlayerController.Get_Controller.Shard_Active = true;
+        PlayerController.Get_Controller.GetSet_CurrentShard = this;
+        Target = PlayerController.Get_Controller.Get_PlayerRB.transform;
+        InteractionCollider.enabled = false;
     }
 }

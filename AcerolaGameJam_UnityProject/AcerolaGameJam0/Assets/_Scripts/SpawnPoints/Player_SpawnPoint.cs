@@ -7,9 +7,26 @@ public class Player_SpawnPoint : Interactable
     private bool PlayExit = false;
     public UIInteractData Interact_Instructions;
 
+    [SerializeField] private string Spawn_PointID;
+    [SerializeField] private bool ActiveOnInit;
+
     protected virtual void Awake()
     {
         base.Awake();
+    }
+
+    protected void Start()
+    {
+        if (GameManager._GameManager.Get_SpawnPointStatus.ContainsKey(Spawn_PointID))
+        {
+            return;
+        }
+
+        GameManager._GameManager.Get_SpawnPointStatus.Add(Spawn_PointID, ActiveOnInit);
+        if (ActiveOnInit)
+        {
+            GameManager._GameManager.Set_Spawn(new Respawn_Data(transform.position));
+        }
     }
 
     protected override void On_Enter()

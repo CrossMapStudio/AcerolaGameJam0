@@ -24,6 +24,8 @@ public class Enemy_Attack : Enemy_BaseState
 
     public override void onEnter()
     {
+        Driver.Get_EnemyRB.velocity = Vector2.zero;
+
         Driver.On_Init.OnEventRaised.AddListener(Launch_Attack);
         Driver.On_Event.OnEventRaised.AddListener(Finish_Attack);
         Driver.On_Finish.OnEventRaised.AddListener(End_State);
@@ -38,6 +40,8 @@ public class Enemy_Attack : Enemy_BaseState
         Driver.On_Event.OnEventRaised.RemoveListener(Finish_Attack);
         Driver.On_Finish.OnEventRaised.RemoveListener(End_State);
         Driver.ChangeToHitState_Channel.RemoveListener(Enter_HitState);
+
+        LaunchAttack = false;
     }
 
     public override void onFixedUpdate()

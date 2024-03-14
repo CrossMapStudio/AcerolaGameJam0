@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Enemy_Weapon
   - Player_HitBox
+  - Enemy_Spawn
   layers:
   - Default
   - TransparentFX

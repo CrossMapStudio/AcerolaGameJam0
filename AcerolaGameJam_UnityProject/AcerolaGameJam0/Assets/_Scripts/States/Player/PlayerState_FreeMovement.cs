@@ -20,6 +20,7 @@ public class PlayerState_FreeMovement : BaseState
         //Start Idle Animation ---
         Player_InputDriver.Get_Dash.performed += Dash;
         Player_InputDriver.Get_AttackLight.performed += Attack;
+        Player_InputDriver.Get_Healing.performed += Heal;
         Player_InputDriver.Get_Interact.performed += Interact.RaiseEvent;
         PlayerController.Get_Controller.Player_CombatChannel.OnEventRaised.AddListener(PlayerController.Get_Controller.Take_Damage);
 
@@ -31,6 +32,7 @@ public class PlayerState_FreeMovement : BaseState
     {
         Player_InputDriver.Get_Dash.performed -= Dash;
         Player_InputDriver.Get_AttackLight.performed -= Attack;
+        Player_InputDriver.Get_Healing.performed -= Heal;
         Player_InputDriver.Get_Interact.performed -= Interact.RaiseEvent;
         PlayerController.Get_Controller.Player_CombatChannel.OnEventRaised.RemoveListener(PlayerController.Get_Controller.Take_Damage);
 
@@ -83,6 +85,11 @@ public class PlayerState_FreeMovement : BaseState
     public void Dash(InputAction.CallbackContext context)
     {
         PlayerController.Get_Controller.Get_StateMachine.changeState(PlayerController.Get_Controller.Get_States[2]);
+    }
+
+    public void Heal(InputAction.CallbackContext context)
+    {
+        PlayerController.Get_Controller.Get_StateMachine.changeState(PlayerController.Get_Controller.Get_States[6]);
     }
 
     public void Attack(InputAction.CallbackContext context)

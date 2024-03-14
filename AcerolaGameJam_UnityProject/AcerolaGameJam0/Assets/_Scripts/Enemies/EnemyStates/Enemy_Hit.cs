@@ -14,6 +14,8 @@ public class Enemy_Hit : Enemy_BaseState
 
     public override void onEnter()
     {
+        Driver.Get_EnemyRB.velocity = Vector2.zero;
+
         Driver.Get_Animator.Play(AnimationClip_Name, 0, 0);
         Driver.Enemy_Hit_ParticleSystem.Play();
 

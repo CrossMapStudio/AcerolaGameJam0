@@ -40,6 +40,7 @@ public class InteractionBase : MonoBehaviour
 
     public void OnApplicationQuit()
     {
-        Channel.OnEventRaised.RemoveListener(Subscriber);
+        if (Channel != null)
+            Channel.OnEventRaised.RemoveListener(Subscriber);
     }
 }

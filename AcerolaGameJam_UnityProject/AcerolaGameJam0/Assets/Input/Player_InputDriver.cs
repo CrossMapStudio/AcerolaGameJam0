@@ -30,6 +30,9 @@ public class Player_InputDriver : SingletonPersistent<Player_InputDriver>
     private static Vector2 StoredDirection = new Vector2(1, 0);
     public static Vector2 Get_StoredDirection => StoredDirection;
 
+    private static InputAction Healing;
+    public static InputAction Get_Healing => Healing;
+
     private static InputAction Continue;
     public static InputAction Get_Continue => Continue;
     #endregion
@@ -45,6 +48,9 @@ public class Player_InputDriver : SingletonPersistent<Player_InputDriver>
         Dash = Input_Controller.Player.Dash;
         Attack_Light = Input_Controller.Player.Attack;
         Interact = Input_Controller.Player.Interact;
+        Healing = Input_Controller.Player.Healing;
+
+        //Death Screen
         Continue = Input_Controller.DeathScreen.Continue;
     }
 
@@ -55,6 +61,8 @@ public class Player_InputDriver : SingletonPersistent<Player_InputDriver>
         Dash.Enable();
         Attack_Light.Enable();
         Interact.Enable();
+        Healing.Enable();
+
         Continue.Enable();
     }
 
@@ -65,6 +73,8 @@ public class Player_InputDriver : SingletonPersistent<Player_InputDriver>
         Dash.Disable();
         Attack_Light.Disable();
         Interact.Disable();
+        Healing.Disable();
+
         Continue.Disable();
     }
 
@@ -75,6 +85,8 @@ public class Player_InputDriver : SingletonPersistent<Player_InputDriver>
         Dash.Dispose();
         Attack_Light.Dispose();
         Interact.Dispose();
+        Healing.Dispose();
+
         Continue.Dispose();
     }
 

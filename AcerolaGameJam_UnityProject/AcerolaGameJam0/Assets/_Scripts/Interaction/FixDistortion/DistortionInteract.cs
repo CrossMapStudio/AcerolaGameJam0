@@ -13,9 +13,33 @@ public class DistortionInteract : Interactable
     [SerializeField] private SpriteRenderer _Renderer;
     [SerializeField] private Material FixedMaterial;
 
+    [SerializeField] private string Distortion_ID;
+    [SerializeField] GenericCallChannel Init_Level;
+
     protected virtual void Awake()
     {
         base.Awake();
+    }
+
+    private void Start()
+    {
+        if (GameManager._GameManager.Get_DistortionStatus.ContainsKey(Distortion_ID))
+        {
+            if (GameManager._GameManager.Get_DistortionStatus[Distortion_ID])
+            {
+                if (DistortionAnimator != null)
+                    DistortionAnimator.Play("FixDistortion");
+
+                InteractionCollider.enabled = false;
+                OnFixCallLink.RaiseEvent();
+
+                _Renderer.material = FixedMaterial;
+            }
+        }
+        else
+        {
+            GameManager._GameManager.Get_DistortionStatus.Add(Distortion_ID, false);
+        }
     }
 
     protected override void On_Enter()
@@ -51,7 +75,11 @@ public class DistortionInteract : Interactable
 
             //Grab the Current Shard --- Play Animation ---
             Destroy(PlayerController.Get_Controller.GetSet_CurrentShard.gameObject);
+
+            PlayerController.Get_Controller.Shard_Active = false;
             PlayerController.Get_Controller.GetSet_CurrentShard = null;
+
+            GameManager._GameManager.Get_DistortionStatus[Distortion_ID] = true;
         }
     }
 }

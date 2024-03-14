@@ -166,8 +166,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 58
-      y: 4
+      x: 31
+      y: 148
       width: 19
       height: 27
     spriteID: 08ffb7bd52e42804394912fabf1a4e7f
@@ -178,7 +178,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 58, y: 4}
+    uvTransform: {x: 31, y: 148}
   - name: TimeKeeper_Frame_3
     originalName: 
     pivot: {x: 0.5789474, y: -1.2592592}
@@ -186,8 +186,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 58
-      y: 39
+      x: 31
+      y: 183
       width: 19
       height: 27
     spriteID: 62234bbc5538eb34aa4ce65a226b0a5c
@@ -198,7 +198,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 58, y: 39}
+    uvTransform: {x: 31, y: 183}
   - name: TimeKeeper_Frame_4
     originalName: 
     pivot: {x: 0.5789474, y: -1.2592592}
@@ -206,8 +206,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 58
-      y: 74
+      x: 31
+      y: 218
       width: 19
       height: 27
     spriteID: 8e9d257be1fdcd94b9e26c92a89c9234
@@ -218,7 +218,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 58, y: 74}
+    uvTransform: {x: 31, y: 218}
   - name: TimeKeeper_Frame_5
     originalName: 
     pivot: {x: 0.5789474, y: -1.2592592}
@@ -226,8 +226,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 58
-      y: 109
+      x: 31
+      y: 253
       width: 19
       height: 27
     spriteID: 94da471ee99b483409048ec79936ce2f
@@ -238,7 +238,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 58, y: 109}
+    uvTransform: {x: 31, y: 253}
   - name: TimeKeeper_Frame_6
     originalName: 
     pivot: {x: 0.5789474, y: -1.2592592}
@@ -246,8 +246,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 58
-      y: 144
+      x: 31
+      y: 288
       width: 19
       height: 27
     spriteID: ddf07a87a18db0b46a11547dfbefc19a
@@ -258,7 +258,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 58, y: 144}
+    uvTransform: {x: 31, y: 288}
   - name: TimeKeeper_Frame_7
     originalName: 
     pivot: {x: 0.5789474, y: -1.2592592}
@@ -266,8 +266,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 58
-      y: 179
+      x: 31
+      y: 323
       width: 19
       height: 27
     spriteID: 0d2fe9937d8851b49af0729b57ebebc0
@@ -278,7 +278,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 58, y: 179}
+    uvTransform: {x: 31, y: 323}
   - name: TimeKeeper_Frame_8
     originalName: 
     pivot: {x: 0.5789474, y: -1.2592592}
@@ -286,8 +286,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 58
-      y: 214
+      x: 31
+      y: 358
       width: 19
       height: 27
     spriteID: 25d3cf5b57965bd4fadffaaba4abd40b
@@ -298,7 +298,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 58, y: 214}
+    uvTransform: {x: 31, y: 358}
   - name: TimeKeeper_Frame_9
     originalName: 
     pivot: {x: 0.5789474, y: -1.2142857}
@@ -386,8 +386,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 31
-      y: 4
+      x: 4
+      y: 259
       width: 19
       height: 28
     spriteID: 8fa2da0b58eb78c41a3dcc25ac0d7ecc
@@ -398,7 +398,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 31, y: 4}
+    uvTransform: {x: 4, y: 259}
   - name: TimeKeeper_Frame_14
     originalName: 
     pivot: {x: 0.5789474, y: -1.2142857}
@@ -406,8 +406,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 31
-      y: 40
+      x: 4
+      y: 295
       width: 19
       height: 28
     spriteID: bb50de3686c702b44b0a89439d812ee1
@@ -418,7 +418,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 31, y: 40}
+    uvTransform: {x: 4, y: 295}
   - name: TimeKeeper_Frame_15
     originalName: 
     pivot: {x: 0.5789474, y: -1.2142857}
@@ -426,8 +426,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 31
-      y: 76
+      x: 4
+      y: 331
       width: 19
       height: 28
     spriteID: 73c7d36fc8f854043a8c14c9bd0e87f3
@@ -438,7 +438,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 31, y: 76}
+    uvTransform: {x: 4, y: 331}
   - name: TimeKeeper_Frame_16
     originalName: 
     pivot: {x: 0.6315789, y: -1.2142857}
@@ -446,8 +446,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 31
-      y: 112
+      x: 4
+      y: 367
       width: 19
       height: 28
     spriteID: 2043d86fdeeab9245867bddd9f5c9bee
@@ -458,7 +458,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 31, y: 112}
+    uvTransform: {x: 4, y: 367}
   - name: TimeKeeper_Frame_17
     originalName: 
     pivot: {x: 0.7058824, y: -1.25}
@@ -466,8 +466,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 85
-      y: 178
+      x: 58
+      y: 245
       width: 17
       height: 28
     spriteID: 242af66f6e2f15146ba17cc39974c0ec
@@ -478,7 +478,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 85, y: 178}
+    uvTransform: {x: 58, y: 245}
   - name: TimeKeeper_Frame_18
     originalName: 
     pivot: {x: 0.75, y: -1.1724138}
@@ -486,8 +486,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 112
-      y: 154
+      x: 58
+      y: 413
       width: 16
       height: 29
     spriteID: 545e2c7733d43f440be7ff57452eb59e
@@ -498,7 +498,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 112, y: 154}
+    uvTransform: {x: 58, y: 413}
   - name: TimeKeeper_Frame_19
     originalName: 
     pivot: {x: 0.68750006, y: -1.2592592}
@@ -506,8 +506,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 148
-      y: 4
+      x: 85
+      y: 237
       width: 16
       height: 27
     spriteID: e619e0eb87e5d7d4fa464101c7083cb9
@@ -518,7 +518,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 148, y: 4}
+    uvTransform: {x: 85, y: 237}
   - name: TimeKeeper_Frame_20
     originalName: 
     pivot: {x: 0.6315789, y: -1.2962964}
@@ -526,8 +526,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 85
-      y: 4
+      x: 31
+      y: 393
       width: 19
       height: 27
     spriteID: 97441602777fc2e41b8d8a36c642ec8b
@@ -538,7 +538,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 85, y: 4}
+    uvTransform: {x: 31, y: 393}
   - name: TimeKeeper_Frame_21
     originalName: 
     pivot: {x: 0.6315789, y: -1.2962964}
@@ -546,8 +546,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 85
-      y: 39
+      x: 31
+      y: 428
       width: 19
       height: 27
     spriteID: a8c8d93aac0ec8d4886f09ece71fff03
@@ -558,7 +558,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 85, y: 39}
+    uvTransform: {x: 31, y: 428}
   - name: TimeKeeper_Frame_22
     originalName: 
     pivot: {x: 0.6315789, y: -1.1724138}
@@ -586,8 +586,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 112
-      y: 128
+      x: 85
+      y: 29
       width: 26
       height: 18
     spriteID: 38551b05f06994e4e8491ba8e08e57bd
@@ -598,7 +598,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 112, y: 128}
+    uvTransform: {x: 85, y: 29}
   - name: TimeKeeper_Frame_24
     originalName: 
     pivot: {x: 0.71428573, y: -1.9411765}
@@ -606,7 +606,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 112
+      x: 85
       y: 4
       width: 28
       height: 17
@@ -618,7 +618,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 112, y: 4}
+    uvTransform: {x: 85, y: 4}
   - name: TimeKeeper_Frame_25
     originalName: 
     pivot: {x: 0.6086957, y: -1.8333334}
@@ -626,8 +626,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 172
-      y: 29
+      x: 85
+      y: 357
       width: 23
       height: 18
     spriteID: 7bc1f456d856f3c42b1393baec471b4a
@@ -638,7 +638,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 172, y: 29}
+    uvTransform: {x: 85, y: 357}
   - name: TimeKeeper_Frame_26
     originalName: 
     pivot: {x: 0.6086957, y: -1.736842}
@@ -646,8 +646,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 112
-      y: 191
+      x: 85
+      y: 55
       width: 23
       height: 19
     spriteID: 3a286ca7320cfcc44840f2d278cf2bc9
@@ -658,7 +658,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 112, y: 191}
+    uvTransform: {x: 85, y: 55}
   - name: TimeKeeper_Frame_27
     originalName: 
     pivot: {x: 0.5789474, y: -1.3599999}
@@ -666,8 +666,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 85
-      y: 214
+      x: 58
+      y: 281
       width: 19
       height: 25
     spriteID: 9000e0827d860634e84d383969b062a5
@@ -678,7 +678,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 85, y: 214}
+    uvTransform: {x: 58, y: 281}
   - name: TimeKeeper_Frame_28
     originalName: 
     pivot: {x: 0.5789474, y: -1.2142857}
@@ -686,8 +686,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 31
-      y: 148
+      x: 4
+      y: 403
       width: 19
       height: 28
     spriteID: 29ae230b5d3af4641ba32d4ffcfb2115
@@ -698,7 +698,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 31, y: 148}
+    uvTransform: {x: 4, y: 403}
   - name: TimeKeeper_Frame_29
     originalName: 
     pivot: {x: 0.75, y: -2}
@@ -706,8 +706,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 172
-      y: 82
+      x: 85
+      y: 437
       width: 20
       height: 17
     spriteID: 33552874ab76e074ba26699056883a99
@@ -718,7 +718,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 172, y: 82}
+    uvTransform: {x: 85, y: 437}
   - name: TimeKeeper_Frame_30
     originalName: 
     pivot: {x: 0.75999993, y: -1.9411765}
@@ -726,8 +726,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 172
-      y: 4
+      x: 85
+      y: 272
       width: 25
       height: 17
     spriteID: 720ab7810678bb54f935da1007acf7be
@@ -738,7 +738,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 172, y: 4}
+    uvTransform: {x: 85, y: 272}
   - name: TimeKeeper_Frame_31
     originalName: 
     pivot: {x: 0.5789474, y: -1.3599999}
@@ -746,8 +746,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 112
-      y: 29
+      x: 58
+      y: 314
       width: 19
       height: 25
     spriteID: ca42bd8736e0109489d120be0527b849
@@ -758,7 +758,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 112, y: 29}
+    uvTransform: {x: 58, y: 314}
   - name: TimeKeeper_Frame_32
     originalName: 
     pivot: {x: 0.5789474, y: -1.3076923}
@@ -766,8 +766,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 85
-      y: 144
+      x: 58
+      y: 109
       width: 19
       height: 26
     spriteID: 1b0fb2887c6b72e4895d81712a7b3ef4
@@ -778,7 +778,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 85, y: 144}
+    uvTransform: {x: 58, y: 109}
   - name: TimeKeeper_Frame_41
     originalName: 
     pivot: {x: 0.5789474, y: -1.2142857}
@@ -786,8 +786,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 31
-      y: 184
+      x: 4
+      y: 439
       width: 19
       height: 28
     spriteID: e798ef27dc354854bbb4874540ae9f38
@@ -798,7 +798,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 31, y: 184}
+    uvTransform: {x: 4, y: 439}
   - name: TimeKeeper_Frame_24
     originalName: 
     pivot: {x: 0.6315789, y: -1.2592592}
@@ -806,8 +806,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 85
-      y: 74
+      x: 31
+      y: 463
       width: 19
       height: 27
     spriteID: eeb67c506d4facb4da61920fbd21c25e
@@ -818,7 +818,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 85, y: 74}
+    uvTransform: {x: 31, y: 463}
   - name: TimeKeeper_Frame_25
     originalName: 
     pivot: {x: 0.6315789, y: -1.4782608}
@@ -826,8 +826,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 112
-      y: 218
+      x: 85
+      y: 82
       width: 19
       height: 23
     spriteID: 4038d8bbebcdb964fb46136383fd1d2a
@@ -838,7 +838,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 112, y: 218}
+    uvTransform: {x: 85, y: 82}
   - name: TimeKeeper_Frame_26
     originalName: 
     pivot: {x: 0.6315789, y: -1.3599999}
@@ -846,8 +846,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 112
-      y: 62
+      x: 58
+      y: 347
       width: 19
       height: 25
     spriteID: a30d844ca39972c48bdc6c10ac84bb73
@@ -858,7 +858,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 112, y: 62}
+    uvTransform: {x: 58, y: 347}
   - name: TimeKeeper_Frame_35
     originalName: 
     pivot: {x: 0.6315789, y: -1.3599999}
@@ -866,8 +866,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 112
-      y: 95
+      x: 58
+      y: 380
       width: 19
       height: 25
     spriteID: 5428f25ad5494c0469176c1dc084b1f3
@@ -878,7 +878,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 112, y: 95}
+    uvTransform: {x: 58, y: 380}
   - name: TimeKeeper_Frame_36
     originalName: 
     pivot: {x: 0.6315789, y: -1.2592592}
@@ -886,8 +886,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 85
-      y: 109
+      x: 58
+      y: 4
       width: 19
       height: 27
     spriteID: 5fdcbd9434024f8429a82e2e61998db7
@@ -898,7 +898,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 85, y: 109}
+    uvTransform: {x: 58, y: 4}
   - name: TimeKeeper_Frame_37
     originalName: 
     pivot: {x: 0.5789474, y: -1.2142857}
@@ -906,8 +906,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 31
-      y: 220
+      x: 4
+      y: 475
       width: 19
       height: 28
     spriteID: 0174c37f103805349bac1c1795fb3418
@@ -918,18 +918,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 31, y: 220}
+    uvTransform: {x: 4, y: 475}
   - name: TimeKeeper_Frame_38
     originalName: 
-    pivot: {x: 0.62499994, y: -1.8333334}
+    pivot: {x: 0.5789474, y: -1.2142857}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 172
-      y: 107
-      width: 16
-      height: 18
+      x: 31
+      y: 4
+      width: 19
+      height: 28
     spriteID: 32c6cd8212425b946922b2671d6bbe75
     spriteBone: []
     spriteOutline: []
@@ -938,18 +938,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 172, y: 107}
+    uvTransform: {x: 31, y: 4}
   - name: TimeKeeper_Frame_24
     originalName: 
-    pivot: {x: 0.53846145, y: -1.8333334}
+    pivot: {x: 0.6315789, y: -1.2592592}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 172
-      y: 209
-      width: 13
-      height: 18
+      x: 58
+      y: 39
+      width: 19
+      height: 27
     spriteID: 95adac6aa9533ee478cf93248b47fe5b
     spriteBone: []
     spriteOutline: []
@@ -958,18 +958,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 172, y: 209}
+    uvTransform: {x: 58, y: 39}
   - name: TimeKeeper_Frame_25
     originalName: 
-    pivot: {x: 0.36363629, y: -2.0625}
+    pivot: {x: 0.6315789, y: -1.4782608}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 172
-      y: 235
-      width: 11
-      height: 16
+      x: 85
+      y: 113
+      width: 19
+      height: 23
     spriteID: d617e65c443131a4f980735917501380
     spriteBone: []
     spriteOutline: []
@@ -978,18 +978,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 172, y: 235}
+    uvTransform: {x: 85, y: 113}
   - name: TimeKeeper_Frame_34
     originalName: 
-    pivot: {x: 0.31578946, y: -1.736842}
+    pivot: {x: 0.6315789, y: -1.4545455}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 172
-      y: 55
+      x: 85
+      y: 297
       width: 19
-      height: 19
+      height: 22
     spriteID: 894b39a5276202e4ba5e0c7ccf77823b
     spriteBone: []
     spriteOutline: []
@@ -998,18 +998,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 172, y: 55}
+    uvTransform: {x: 85, y: 297}
   - name: TimeKeeper_Frame_35
     originalName: 
-    pivot: {x: 0.35714293, y: -1.8333334}
+    pivot: {x: 0.4736842, y: -1.7894735}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 172
-      y: 133
-      width: 14
-      height: 18
+      x: 85
+      y: 383
+      width: 19
+      height: 19
     spriteID: b492245277db8864584d0dbd7a6550a4
     spriteBone: []
     spriteOutline: []
@@ -1018,18 +1018,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 172, y: 133}
+    uvTransform: {x: 85, y: 383}
   - name: TimeKeeper_Frame_36
     originalName: 
-    pivot: {x: 0.42857143, y: -1.9411765}
+    pivot: {x: 0.6315789, y: -1.4545455}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 172
-      y: 159
-      width: 14
-      height: 17
+      x: 85
+      y: 327
+      width: 19
+      height: 22
     spriteID: 544f681a1e54cf24086a10ecbfc245e5
     spriteBone: []
     spriteOutline: []
@@ -1038,18 +1038,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 172, y: 159}
+    uvTransform: {x: 85, y: 327}
   - name: TimeKeeper_Frame_37
     originalName: 
-    pivot: {x: 0.57142866, y: -1.9411765}
+    pivot: {x: 0.6315789, y: -1.4782608}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 172
-      y: 184
-      width: 14
-      height: 17
+      x: 85
+      y: 144
+      width: 19
+      height: 23
     spriteID: 12d7c1c5c70fe1b418ff6a964c797dfe
     spriteBone: []
     spriteOutline: []
@@ -1058,18 +1058,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 172, y: 184}
+    uvTransform: {x: 85, y: 144}
   - name: TimeKeeper_Frame_38
     originalName: 
-    pivot: {x: 0.58333325, y: -1.8333334}
+    pivot: {x: 0.6315789, y: -1.2592592}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 148
-      y: 39
-      width: 12
-      height: 18
+      x: 58
+      y: 74
+      width: 19
+      height: 27
     spriteID: d74f4cb65a86da14ba367fa409294e55
     spriteBone: []
     spriteOutline: []
@@ -1078,7 +1078,467 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 148, y: 39}
+    uvTransform: {x: 58, y: 74}
+  - name: TimeKeeper_Frame_34
+    originalName: 
+    pivot: {x: 0.5789474, y: -1.2142857}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 40
+      width: 19
+      height: 28
+    spriteID: 98d5072310447e544ad9b9e128f49836
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 40}
+  - name: TimeKeeper_Frame_35
+    originalName: 
+    pivot: {x: 0.5789474, y: -1.2142857}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 76
+      width: 19
+      height: 28
+    spriteID: cb84e0a3983de4843848a0e03a97b5d5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 76}
+  - name: TimeKeeper_Frame_36
+    originalName: 
+    pivot: {x: 0.5789474, y: -1.3076923}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 58
+      y: 143
+      width: 19
+      height: 26
+    spriteID: a2a86dfdd76183d499fbf6584ca9dfcf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 58, y: 143}
+  - name: TimeKeeper_Frame_37
+    originalName: 
+    pivot: {x: 0.5789474, y: -1.3076923}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 58
+      y: 177
+      width: 19
+      height: 26
+    spriteID: e6da604a31b1c8741bbbb5243863887c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 58, y: 177}
+  - name: TimeKeeper_Frame_38
+    originalName: 
+    pivot: {x: 0.5789474, y: -1.4166666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 58
+      y: 450
+      width: 19
+      height: 24
+    spriteID: 6d0211c2575bfa24595e51baede12ba9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 58, y: 450}
+  - name: TimeKeeper_Frame_53
+    originalName: 
+    pivot: {x: 0.5789474, y: -1.4782608}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 175
+      width: 19
+      height: 23
+    spriteID: 5c0ad8ec83128a74392fc6c10350662c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 175}
+  - name: TimeKeeper_Frame_54
+    originalName: 
+    pivot: {x: 0.5789474, y: -1.4782608}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 206
+      width: 19
+      height: 23
+    spriteID: 309fa500cbf226c469b38c920a9a11ff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 206}
+  - name: TimeKeeper_Frame_55
+    originalName: 
+    pivot: {x: 0.5789474, y: -1.4166666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 58
+      y: 482
+      width: 19
+      height: 24
+    spriteID: c6e1e00b35349264898136580ff5be4b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 58, y: 482}
+  - name: TimeKeeper_Frame_56
+    originalName: 
+    pivot: {x: 0.5789474, y: -1.3076923}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 58
+      y: 211
+      width: 19
+      height: 26
+    spriteID: 92a9b087dd174ff4887eb0b1fc5ce248
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 58, y: 211}
+  - name: TimeKeeper_Frame_57
+    originalName: 
+    pivot: {x: 0.5789474, y: -1.2142857}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 112
+      width: 19
+      height: 28
+    spriteID: c03141c07b0eff74f8a34ef74536fc30
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 112}
+  - name: TimeKeeper_Frame_23
+    originalName: 
+    pivot: {x: 0.62499994, y: -1.8333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 485
+      width: 16
+      height: 18
+    spriteID: 268d4beea89bccf4486bf3ff2b0646d4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 485}
+  - name: TimeKeeper_Frame_24
+    originalName: 
+    pivot: {x: 0.53846145, y: -1.8333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 121
+      y: 114
+      width: 13
+      height: 18
+    spriteID: 385b892f281db8449bd889ff70166e59
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 121, y: 114}
+  - name: TimeKeeper_Frame_25
+    originalName: 
+    pivot: {x: 0.36363629, y: -2.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 142
+      y: 114
+      width: 11
+      height: 16
+    spriteID: ec976f659f7e04e4599aa2f72742c5e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 114}
+  - name: TimeKeeper_Frame_34
+    originalName: 
+    pivot: {x: 0.31578946, y: -1.736842}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 410
+      width: 19
+      height: 19
+    spriteID: 3ffeadb4965778543a5d3580c837398d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 410}
+  - name: TimeKeeper_Frame_35
+    originalName: 
+    pivot: {x: 0.35714293, y: -1.8333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 121
+      y: 38
+      width: 14
+      height: 18
+    spriteID: 599a68f36bd81bd4a928c2e3b25d57bb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 121, y: 38}
+  - name: TimeKeeper_Frame_36
+    originalName: 
+    pivot: {x: 0.42857143, y: -1.9411765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 121
+      y: 64
+      width: 14
+      height: 17
+    spriteID: 4991eb1f6e35d93448a16eeee88110ed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 121, y: 64}
+  - name: TimeKeeper_Frame_37
+    originalName: 
+    pivot: {x: 0.57142866, y: -1.9411765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 121
+      y: 89
+      width: 14
+      height: 17
+    spriteID: 95dd9f03e3214c045a3608dd597c0f70
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 121, y: 89}
+  - name: TimeKeeper_Frame_38
+    originalName: 
+    pivot: {x: 0.58333325, y: -1.8333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 121
+      y: 170
+      width: 12
+      height: 18
+    spriteID: a0a24f6aa56f9c54b9208f2169fa9432
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 121, y: 170}
+  - name: TimeKeeper_Frame_53
+    originalName: 
+    pivot: {x: 0.38095245, y: -2.2666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 462
+      width: 21
+      height: 15
+    spriteID: 3317d82cccce95b4a9ae1f725ea2de9a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 462}
+  - name: TimeKeeper_Frame_54
+    originalName: 
+    pivot: {x: 0.40624997, y: -3.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 121
+      y: 4
+      width: 32
+      height: 9
+    spriteID: b5b3df5d06abb0349bf301354a871688
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 121, y: 4}
+  - name: TimeKeeper_Frame_55
+    originalName: 
+    pivot: {x: 0.40624997, y: -3.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 121
+      y: 21
+      width: 32
+      height: 9
+    spriteID: a94c2e7fbb2a4474a920412039aafb12
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 121, y: 21}
+  - name: TimeKeeper_Frame_56
+    originalName: 
+    pivot: {x: 0.40624997, y: -4.714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 121
+      y: 140
+      width: 32
+      height: 7
+    spriteID: 4598f45b06f63d04b827d8c9a4d07e58
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 121, y: 140}
+  - name: TimeKeeper_Frame_57
+    originalName: 
+    pivot: {x: 0.40624997, y: -4.714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 121
+      y: 155
+      width: 32
+      height: 7
+    spriteID: 74785e11eb28f5f4ba97a9e77d3e807f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 121, y: 155}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -1408,6 +1868,150 @@ ScriptedImporter:
         width: 19
         height: 28
       spriteId: 0174c37f103805349bac1c1795fb3418
+    - name: TimeKeeper_Frame_48
+      frameIndex: 48
+      cellRect:
+        x: 37
+        y: 34
+        width: 19
+        height: 28
+      spriteId: 32c6cd8212425b946922b2671d6bbe75
+    - name: TimeKeeper_Frame_49
+      frameIndex: 49
+      cellRect:
+        x: 36
+        y: 34
+        width: 19
+        height: 27
+      spriteId: 95adac6aa9533ee478cf93248b47fe5b
+    - name: TimeKeeper_Frame_50
+      frameIndex: 50
+      cellRect:
+        x: 36
+        y: 34
+        width: 19
+        height: 23
+      spriteId: d617e65c443131a4f980735917501380
+    - name: TimeKeeper_Frame_51
+      frameIndex: 51
+      cellRect:
+        x: 36
+        y: 32
+        width: 19
+        height: 22
+      spriteId: 894b39a5276202e4ba5e0c7ccf77823b
+    - name: TimeKeeper_Frame_52
+      frameIndex: 52
+      cellRect:
+        x: 39
+        y: 34
+        width: 19
+        height: 19
+      spriteId: b492245277db8864584d0dbd7a6550a4
+    - name: TimeKeeper_Frame_58
+      frameIndex: 58
+      cellRect:
+        x: 36
+        y: 32
+        width: 19
+        height: 22
+      spriteId: 544f681a1e54cf24086a10ecbfc245e5
+    - name: TimeKeeper_Frame_59
+      frameIndex: 59
+      cellRect:
+        x: 36
+        y: 34
+        width: 19
+        height: 23
+      spriteId: 12d7c1c5c70fe1b418ff6a964c797dfe
+    - name: TimeKeeper_Frame_60
+      frameIndex: 60
+      cellRect:
+        x: 36
+        y: 34
+        width: 19
+        height: 27
+      spriteId: d74f4cb65a86da14ba367fa409294e55
+    - name: TimeKeeper_Frame_61
+      frameIndex: 61
+      cellRect:
+        x: 37
+        y: 34
+        width: 19
+        height: 28
+      spriteId: 98d5072310447e544ad9b9e128f49836
+    - name: TimeKeeper_Frame_62
+      frameIndex: 62
+      cellRect:
+        x: 37
+        y: 34
+        width: 19
+        height: 28
+      spriteId: cb84e0a3983de4843848a0e03a97b5d5
+    - name: TimeKeeper_Frame_63
+      frameIndex: 63
+      cellRect:
+        x: 37
+        y: 34
+        width: 19
+        height: 26
+      spriteId: a2a86dfdd76183d499fbf6584ca9dfcf
+    - name: TimeKeeper_Frame_64
+      frameIndex: 64
+      cellRect:
+        x: 37
+        y: 34
+        width: 19
+        height: 26
+      spriteId: e6da604a31b1c8741bbbb5243863887c
+    - name: TimeKeeper_Frame_65
+      frameIndex: 65
+      cellRect:
+        x: 37
+        y: 34
+        width: 19
+        height: 24
+      spriteId: 6d0211c2575bfa24595e51baede12ba9
+    - name: TimeKeeper_Frame_66
+      frameIndex: 66
+      cellRect:
+        x: 37
+        y: 34
+        width: 19
+        height: 23
+      spriteId: 5c0ad8ec83128a74392fc6c10350662c
+    - name: TimeKeeper_Frame_67
+      frameIndex: 67
+      cellRect:
+        x: 37
+        y: 34
+        width: 19
+        height: 23
+      spriteId: 309fa500cbf226c469b38c920a9a11ff
+    - name: TimeKeeper_Frame_68
+      frameIndex: 68
+      cellRect:
+        x: 37
+        y: 34
+        width: 19
+        height: 24
+      spriteId: c6e1e00b35349264898136580ff5be4b
+    - name: TimeKeeper_Frame_69
+      frameIndex: 69
+      cellRect:
+        x: 37
+        y: 34
+        width: 19
+        height: 26
+      spriteId: 92a9b087dd174ff4887eb0b1fc5ce248
+    - name: TimeKeeper_Frame_70
+      frameIndex: 70
+      cellRect:
+        x: 37
+        y: 34
+        width: 19
+        height: 28
+      spriteId: c03141c07b0eff74f8a34ef74536fc30
     - name: TimeKeeper_Frame_23
       frameIndex: 23
       cellRect:
@@ -1415,7 +2019,7 @@ ScriptedImporter:
         y: 33
         width: 16
         height: 18
-      spriteId: 32c6cd8212425b946922b2671d6bbe75
+      spriteId: 268d4beea89bccf4486bf3ff2b0646d4
     - name: TimeKeeper_Frame_24
       frameIndex: 24
       cellRect:
@@ -1423,7 +2027,7 @@ ScriptedImporter:
         y: 33
         width: 13
         height: 18
-      spriteId: 95adac6aa9533ee478cf93248b47fe5b
+      spriteId: 385b892f281db8449bd889ff70166e59
     - name: TimeKeeper_Frame_25
       frameIndex: 25
       cellRect:
@@ -1431,7 +2035,7 @@ ScriptedImporter:
         y: 33
         width: 11
         height: 16
-      spriteId: d617e65c443131a4f980735917501380
+      spriteId: ec976f659f7e04e4599aa2f72742c5e9
     - name: TimeKeeper_Frame_34
       frameIndex: 34
       cellRect:
@@ -1439,7 +2043,7 @@ ScriptedImporter:
         y: 33
         width: 19
         height: 19
-      spriteId: 894b39a5276202e4ba5e0c7ccf77823b
+      spriteId: 3ffeadb4965778543a5d3580c837398d
     - name: TimeKeeper_Frame_35
       frameIndex: 35
       cellRect:
@@ -1447,7 +2051,7 @@ ScriptedImporter:
         y: 33
         width: 14
         height: 18
-      spriteId: b492245277db8864584d0dbd7a6550a4
+      spriteId: 599a68f36bd81bd4a928c2e3b25d57bb
     - name: TimeKeeper_Frame_36
       frameIndex: 36
       cellRect:
@@ -1455,7 +2059,7 @@ ScriptedImporter:
         y: 33
         width: 14
         height: 17
-      spriteId: 544f681a1e54cf24086a10ecbfc245e5
+      spriteId: 4991eb1f6e35d93448a16eeee88110ed
     - name: TimeKeeper_Frame_37
       frameIndex: 37
       cellRect:
@@ -1463,7 +2067,7 @@ ScriptedImporter:
         y: 33
         width: 14
         height: 17
-      spriteId: 12d7c1c5c70fe1b418ff6a964c797dfe
+      spriteId: 95dd9f03e3214c045a3608dd597c0f70
     - name: TimeKeeper_Frame_38
       frameIndex: 38
       cellRect:
@@ -1471,7 +2075,47 @@ ScriptedImporter:
         y: 33
         width: 12
         height: 18
-      spriteId: d74f4cb65a86da14ba367fa409294e55
+      spriteId: a0a24f6aa56f9c54b9208f2169fa9432
+    - name: TimeKeeper_Frame_53
+      frameIndex: 53
+      cellRect:
+        x: 40
+        y: 34
+        width: 21
+        height: 15
+      spriteId: 3317d82cccce95b4a9ae1f725ea2de9a
+    - name: TimeKeeper_Frame_54
+      frameIndex: 54
+      cellRect:
+        x: 35
+        y: 33
+        width: 32
+        height: 9
+      spriteId: b5b3df5d06abb0349bf301354a871688
+    - name: TimeKeeper_Frame_55
+      frameIndex: 55
+      cellRect:
+        x: 35
+        y: 33
+        width: 32
+        height: 9
+      spriteId: a94c2e7fbb2a4474a920412039aafb12
+    - name: TimeKeeper_Frame_56
+      frameIndex: 56
+      cellRect:
+        x: 35
+        y: 33
+        width: 32
+        height: 7
+      spriteId: 4598f45b06f63d04b827d8c9a4d07e58
+    - name: TimeKeeper_Frame_57
+      frameIndex: 57
+      cellRect:
+        x: 35
+        y: 33
+        width: 32
+        height: 7
+      spriteId: 74785e11eb28f5f4ba97a9e77d3e807f
     linkedCells: []
     parentIndex: -1
   platformSettings: []

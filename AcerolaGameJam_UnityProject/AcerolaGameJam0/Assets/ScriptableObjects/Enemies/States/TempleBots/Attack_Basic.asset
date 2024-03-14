@@ -19,7 +19,7 @@ MonoBehaviour:
   Finish_Attack_AnimationClipName: AttackFinished_TempleBot
   Speed: 5
   DamageRadius: 0.1
-  Damage: 5
+  Damage: 8
   Damage_Layer:
     serializedVersion: 2
     m_Bits: 1024

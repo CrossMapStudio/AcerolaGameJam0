@@ -4,22 +4,43 @@ using UnityEngine;
 
 public class EnvironmentWalls : MonoBehaviour
 {
-    [SerializeField] private GenericCallChannel Channel;
+    [SerializeField] private GenericBoolCallChannel Channel;
     
     [SerializeField] private Animator _Anim;
-    [SerializeField] private string DropWallAnimationName;
+    [SerializeField] private string RaiseWallAnimationName, DropWallAnimationName;
+
+    [SerializeField] private bool Default_Value;
+    [SerializeField] private GenericCallChannel Level_Init;
 
     private void Awake()
     {
         if (Channel != null)
-            Channel.OnEventRaised.AddListener(DropWall);
+            Channel.OnEventRaised.AddListener(WallToggle);
+
+        WallToggle(Default_Value);
+        Level_Init.OnEventRaised.AddListener(Reset_Wall);
     }
 
-    public void DropWall()
+    public void Reset_Wall()
     {
-        if (_Anim != null)
-            _Anim.Play(DropWallAnimationName);
+        WallToggle(Default_Value);
+    }
+
+    public void WallToggle(bool _Trigger)
+    {
+        if (_Trigger)
+        {
+            if (_Anim != null)
+                _Anim.Play(RaiseWallAnimationName);
+            else
+                gameObject.SetActive(true);
+        }
         else
-            gameObject.SetActive(false);
+        {
+            if (_Anim != null)
+                _Anim.Play(DropWallAnimationName);
+            else
+                gameObject.SetActive(false);
+        }
     }
 }

@@ -13,5 +13,6 @@ public static class SceneManagement
     public static void ChangeScene(int sceneIndex)
     {
         SceneManager.LoadSceneAsync(sceneIndex);
+        GameManager._GameManager.Wait_SceneChange(sceneIndex);
     }
 }

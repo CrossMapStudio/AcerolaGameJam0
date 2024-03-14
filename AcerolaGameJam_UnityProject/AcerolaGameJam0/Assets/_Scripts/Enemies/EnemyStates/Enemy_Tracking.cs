@@ -10,6 +10,8 @@ public class Enemy_Tracking : Enemy_BaseState
     //General Movement has One Animation ---
     [SerializeField] private string AnimationClip_Name;
 
+    private float RangeCheck;
+
     public override bool checkValid()
     {
         return true;
@@ -17,6 +19,7 @@ public class Enemy_Tracking : Enemy_BaseState
 
     public override void onEnter()
     {
+        RangeCheck = Driver.Get_ActiveOffesiveStateGroup.Range;
         Driver.ChangeToHitState_Channel.AddListener(Enter_HitState);
         Driver.Get_Animator.Play(AnimationClip_Name, 0, 0);
     }
@@ -52,7 +55,8 @@ public class Enemy_Tracking : Enemy_BaseState
 
     public override void onUpdate()
     {
-        if (Vector2.Distance(Driver.Get_Target.position, Driver.Get_EnemyRB.position) <= .75f)
+        //Based on a Recovery Timer ---
+        if (Vector2.Distance(Driver.Get_Target.position, Driver.Get_EnemyRB.position) <= RangeCheck)
         {
             Driver.Offensive_StateChange();
         }

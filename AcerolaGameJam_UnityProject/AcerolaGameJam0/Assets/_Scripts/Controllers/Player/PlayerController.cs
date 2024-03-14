@@ -36,6 +36,7 @@ public class PlayerController : SingletonPersistent<PlayerController>
 
     //Particles for Dash
     public ParticleSystem DashParticles;
+    public ParticleSystem HealParticles;
 
     public Collider2D HitRadius;
 
@@ -54,8 +55,12 @@ public class PlayerController : SingletonPersistent<PlayerController>
     //Animation Based Channels ---
 
     //Player Shard Collection ---
+    [HideInInspector]
+    public bool Shard_Active;
     private Shards_Interaction Current_Shard;
     public Shards_Interaction GetSet_CurrentShard { get => Current_Shard; set => Current_Shard = value; }
+    //Used of the Player Moves between scenes with an active shard ---
+    [SerializeField] private Shards_Interaction Shard_Clone;
 
     #region Animation Links
     [SerializeField] private AnimationChannel_Link AnimatorLinkChannels;
@@ -65,6 +70,13 @@ public class PlayerController : SingletonPersistent<PlayerController>
 
     //Used in the Hit State for Direction to Add Force ---
     [HideInInspector] public Vector2 Hit_ForceDirection;
+
+    // For Healing
+    [HideInInspector]
+    public int Current_MedicalCount;
+    public int Med_CountLimit;
+
+    [SerializeField] private GenericCallChannel GameManagerReset_LevelChannel;
 
     protected override void Awake()
     {
@@ -85,11 +97,22 @@ public class PlayerController : SingletonPersistent<PlayerController>
 
         AnimatorLinkChannels.On_Finish = Instantiate(AnimatorLinkChannels.On_Finish);
         On_Finish = AnimatorLinkChannels.On_Finish;
+
+        GameManagerReset_LevelChannel.OnEventRaised.AddListener(Reset_Player);
     }
 
     public void Start()
     {
         Player_StateMachine.changeState(States[1]);
+    }
+
+    public void OnSceneChange()
+    {
+        if (Shard_Active && Current_Shard == null)
+        {
+            Current_Shard = Instantiate(Shard_Clone);
+            Current_Shard.Set_Follow();
+        }
     }
 
     // Update is called once per frame
@@ -121,12 +144,20 @@ public class PlayerController : SingletonPersistent<PlayerController>
 
     public void Reset_Player()
     {
-        Health = 100f;
+        Health = GameManager._GameManager.Saved_PlayerHealth;
+        Current_MedicalCount = GameManager._GameManager.Saved_PlayerMedkits;
         DashValues.ResetValues();
         AttackValues.ResetValues();
 
         HealthBarUpdate.RaiseEvent(Health);
         Player_StateMachine.changeState(States[1]);
+    }
+
+    public void Heal_Player()
+    {
+        Health = 100f;
+        HealthBarUpdate.RaiseEvent(Health);
+        HealParticles.Play();
     }
 
     public void Take_Damage(Vector2 direction, float damage)
